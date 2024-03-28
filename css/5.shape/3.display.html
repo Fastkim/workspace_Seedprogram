@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>display</title>
+        <style>
+            /* block 객체는 width,height로 사이즈 조절 가능
+               inline 객체는 불가능하다. */
+            ul li {
+                border: .1rem solid;
+                width: 10rem;
+                height: 3rem;
+            }
+
+            ul.inline li {
+                display: inline;
+            }
+
+            ul.inline-block li {
+                display: inline-block;
+            }
+
+            ul.inline-block li:nth-child(2) { /* pseudo class li중에 2번째*/
+                display: none; /* 유령상태 */
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>사과</li>
+            <li>딸기</li>
+        </ul>
+        <ul class='inline'>
+            <li>사과</li>
+            <li>딸기</li>
+        </ul>
+        <ul class='inline-block'>
+            <li>사과</li>
+            <li>딸기</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>pseudo element</title>
+        <style>
+            p {
+                border: .1rem solid;
+            }
+
+            p::before { /** p의 앞에 스타일 적용 pseudo element -> :: **/
+                content: '시작';
+                background-color: blue;
+                color: white;
+            }
+            
+            p::after {
+                content: '끝';
+                background-color: blue;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <p>나는 개발자다.</p>
+    </body>
+</html>

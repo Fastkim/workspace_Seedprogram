@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>fieldset legend</title>
+    </head>
+    <body>
+        <form>
+            <fieldset> <!-- 관련 요소를 그룹화, 요소 주위에 상자를 그림. -->
+                <legend>필수</legend> <!-- fieldset의 캡션-->
+                <!--모바일에서 input 타입에 따라 박스를 클릭했을때 숫자/문자 키보드 순서가 결정-->
+                <label>이름<input type='text'/></label>
+                <label>전화번호<input type='tel'/></label>
+            </fieldset>
+            <fieldset>
+                <legend>선택</legend>
+                <label>주소<input type='text'/></label>
+            </fieldset>
+        </form>
+    </body>
+</html>

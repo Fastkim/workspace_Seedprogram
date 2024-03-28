@@ -1,0 +1,19 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    console.log($('.1').children()) // 직계 귀속(같은 레벨 자식)을 찾아내고 있다.
+    console.log($('.1').find('div'))
+    // 일부에만 id를 지정하고 find로 찾아들어가는게 일반적, div가 포함된 모든 자식을 select    
+})
+</script>
+<pre>
+    <div class='1'>
+        <div class='2-1'>
+            <div class='3'>
+                <div class='4'></div>
+            </div>
+        </div>
+        <div class='2-2'></div>
+        <div class='2-3'></div>
+    </div>
+</pre>

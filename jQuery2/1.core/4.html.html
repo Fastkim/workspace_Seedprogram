@@ -1,0 +1,34 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+    $(() => {
+        console.log($('h1').html()) // read 작업
+
+        $('footer').html('<mark>foot</mark>') // write 작업
+        console.log($('footer').html())
+
+        console.log($('header').find('h1').eq(1).html()) // index는 0부터 시작
+        $('header').find('h1').eq(1).html('<hr>') // 15번째줄 <h1><hr><h1>, eq(index)
+        
+        $('ul').find('li').eq(2).html('index: 2').end() // end()를 쓰면 find('li')가 주어객체가 된다, end 객체는 chaining을 이어갈수있게 해준다.
+             .eq(3).html('index: 3').end()
+             .eq(4).html('index: 4')
+        
+        // html() / text()객체의 차이: html()객체는 태그를 인식하지만, text()객체는 문자로만 인식한다.
+        // attr(),html() / text() 차이는 collection의 HTML element를 한개만 출력하는지 모두출력하는지의 차이이다.
+        // text() 객체는 collection타입이므로 묶어서 리턴하므로 결과값은 1개이다.
+        $('h1').text('<mark>Hi</mark>') 
+        console.log($('h1').text())
+    })
+</script>
+<header>
+    <h1><b>hello</b></h1>
+    <h1>world</h1>
+</header>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<footer></footer>

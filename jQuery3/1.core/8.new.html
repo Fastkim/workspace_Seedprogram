@@ -1,0 +1,39 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('<div>').appendTo('hr') // 태그를 직접써주면 element를 새롭게 생성한다.
+    /*
+    $('<div>', {
+        html:: '<p class="center">red</p>'
+        class: 'red'
+    }).appendTo('hr')
+    */
+    // 과제: 위 $() parameter 개수를 하나로 줄이는 refactoring 하라. (위의 경우 파라미터가 2개)
+    $('<div class="red"><p class="center">red</p></div>').appendTo('hr')
+})
+</script>
+<style>
+    div {
+        background-color: orange;
+        width:5rem;
+        height: 5rem;
+        border-radius: 2.5rem;
+    }
+
+    hr {
+        border: .1rem solid;
+    }
+
+    .red {
+        background: red;
+        position: relative;
+    }
+
+    p.center {
+        position: absolute;
+        left: 1.7rem;
+        top: 1rem;
+        font-weight: bold;
+    }
+</style>
+<hr>

@@ -1,0 +1,27 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('button').click(() => {
+        $.ajax({ // parameter request에 담을 내용
+            url: '3.data.json', // 성공  // error : 3.data.json
+            data: {color: 'yellow'},
+            type: 'get', // get : default , post : write
+            dataType: 'json',
+            success: (data, status, xhr) => {
+                $('<h3>').text(data.userName).appendTo('body')
+                $('<p>').html(status).appendTo('body')
+                console.log(xhr)
+            },
+            error: (xhr, status) => {
+                console.log('error ', status)
+                console.log(xhr)
+            },
+            complete: (xhr, status) => {
+                console.log('complete: ', status) // finally와 유사한구조, 성공,실패 모두 등장
+            }
+        })
+    })    
+})
+</script>
+
+<button type='button'>click</button>

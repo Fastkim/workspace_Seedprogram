@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>sibling(형제자매) selector</title>
+        <style>
+            /** h3 등장이후 같은 레벨인 형제들에 모두 스타일적용 **/
+            h3 ~ ul {
+                border: .1rem solid;
+            }
+        </style>    
+    </head>
+    <body>
+        <section>
+            <ul>
+                <li>협재해수욕장</li>
+                <li>표선해수욕장</li>
+            </ul>
+            <h3>제주도</h3>
+            <ul>
+                <li>유리정원</li>
+                <li>카벨리아힐즈</li>
+            </ul>
+            <ul>
+                <li>한라산</li>
+                <li>용눈이오름</li>
+            </ul>
+        </section>
+    </body>
+</html>

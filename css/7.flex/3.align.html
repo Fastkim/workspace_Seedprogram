@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>align(맞추다)-content</title>
+        <style>
+            .item {
+                border: .1rem dotted;
+            }
+            
+            .container {
+                display: flex;
+                width: 5rem;
+                height: 5rem;
+                border: .1rem solid red;
+                align-content: space-around; /* stretch, flex-start, flex-end, center, space-between*/
+                /* align-content는 flex-wrap으로 랩핑한다는 전제하에 사용가능*/
+                flex-wrap: wrap; /* align-content는 flex-wrap: wrap이 있어야 한다.*/
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='item'>111</div>
+            <div class='item'>222</div>
+            <div class='item'>333</div>
+        </div>
+    </body>
+</html>

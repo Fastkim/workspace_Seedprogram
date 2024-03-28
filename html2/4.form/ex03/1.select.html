@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>select</title>
+    </head>
+    <body>
+        <form>
+            <label for='fruit'>과일</label>
+            <select id='fruit'> <!-- 드롭다운 목록을 만드는데 사용 -->
+                <option>사과</option>
+                <option>딸기</option>
+                <option>수박</option>
+            </select>
+
+            <!-- request를 보낼때 value의 값이 담겨져서 보내진다. -->
+            <select name='fruit'>
+                <option value='apple'>사과</option>
+                <option value='strawberry'>딸기</option>
+                <option value='melon'>수박</option>
+            </select>
+
+            <select multiple size='2'>
+                <option>사과</option>
+                <option>딸기</option>
+                <option>포도</option>
+            </select>
+        </form>
+    </body>
+</html>

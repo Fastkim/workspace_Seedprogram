@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>translate</title>
+        <style>
+            div.container {
+                background: red;
+                width: 3rem;
+                padding: 3rem;
+                margin: 1rem;
+                position: relative;
+            }
+
+            div.box {
+                background: black;
+                padding: 2rem;
+                position: absolute;
+                left: 0; /* 0일경우 rem을 붙이지 않아도 됨. 기본단위는 0px*/
+                top: 0;
+            }
+
+            div.box:active {
+                /* active : 마우스클릭했을때만 작동,
+                   transform : 객체를 변형할때 사용하는 태그
+                   translate : 객체를 이동시킬때 사용 (left, top) */
+                   transform: translate(3rem, 1rem)
+            }
+            
+            div.three {
+                perspective: 10rem; /* 원근법 */
+            }
+
+            div.three div:active {
+                transform: translate3d(3rem, 1rem, 5rem); /* 3D 위치 이동 (x,y,z) */
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='box'></div>
+        </div>
+        <div class='container three'>
+            <div class='box'></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('body').data('foo', 10)
+    $('body').data('bar', {isManual: true})
+    $('body').data({
+        baz: [1, 2],
+        hoi: 'hello'
+    })
+
+    console.log($('body').data('foo'))
+    console.log($('body').data('bar'))
+
+    console.log($('body').data())
+})
+</script>

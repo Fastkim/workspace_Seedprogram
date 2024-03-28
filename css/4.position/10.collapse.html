@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>collapse(무너지다)</title>
+        <style>
+            table {
+                border: .1rem dotted;
+                float:left;
+                margin-right: 3rem;
+            }
+
+            td {
+                border: .1rem solid;
+            }
+
+            table.collapse {
+                /* 경계선과 테이블외곽선의 간격을 동일하게 만들기 */
+                border-collapse: collapse;
+                /* 테이블 캡션의 위치설정 */
+                caption-side: bottom;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>연봉</caption>
+            <tr><td>최한석</td><td>1억</td></tr>
+            <tr><td>한아름</td><td>2억</td></tr>
+        </table>
+
+        <table class='collapse'>
+            <caption>연봉</caption>
+            <tr><td>최한석</td><td>1억</td></tr>
+            <tr><td>한아름</td><td>2억</td></tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>flex</title>
+        <style>
+            .item {
+                border: .1rem dotted;
+            }
+            /* flex는 1차원(가로,세로 방향으로 정렬하는것) grid는 2차원*/
+            /*
+            .container {
+                display: flex;
+                border: .1rem solid red;
+                flex-direction: column-reverse; /* row, column, row-reverse
+                flex-wrap: wrap-reverse; /*nowrap 기본값, wrap
+            }
+            */
+            .container {
+                /* 수평구조의 레이아웃 */
+                display: flex;
+                width: 2rem;
+                border: .1rem solid red;
+                flex-flow: row wrap; /* flew-flow * flex-direction + flex-wrap */
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='item'>111</div> 
+            <div class='item'>222</div>
+            <div class='item'>333</div>
+        </div>
+    </body>
+</html>

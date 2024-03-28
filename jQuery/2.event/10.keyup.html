@@ -1,0 +1,11 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('input').keyup(function() {
+        $('span').text($(this).val())
+    })
+})
+</script>
+
+<input type='text'/>
+<span></span>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>transition</title>
+        <style>
+            div {
+                width: 10rem;
+                height: 10rem;
+                background: red;
+                /* 애니메이션 만들기
+                   배경 : red -> blue , border-radius : 0% -> 50% */
+                transition-property: background, border-radius;
+                /* 애니메이션의 총 시간 */
+                transition-duration: 1s;
+                /* 호버가 되고나서 0.5초가 지난후에 action 작동*/
+                transition-delay: .5s;
+            }
+
+            /* 과제: 빨간 상자위에 hover 하면, 파란색 원으로 변신하라 */
+            
+            div:hover {
+                background: blue;
+                border-radius: 50%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

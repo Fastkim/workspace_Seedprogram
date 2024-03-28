@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>datalist</title>
+    </head>
+    <body>
+        <form>
+            <input type='text' list='lang1'/>
+            <input type='text' list='lang2'/>
+            <input type='text' list='lang3'/>
+        </form>
+
+        <datalist id='lang1'> <!-- 텍스트에 포커스를 잡았을때 드롭다운이 보이게 함 -->
+            <option>한국어</option>
+            <option>영어</option>
+        </datalist>
+        
+        <datalist id='lang2'>
+            <option value='ko'>한국어</option> <!-- value가 붙으면 1.value, 2.텍스트 순으로 목록이 생성 -->
+            <option value='en'>영어</option>
+        </datalist>
+
+        <!-- 텍스트가 없을때 value만 지정됨. -->
+        <datalist id='lang3'>
+            <option value='ko'></option>
+            <option value='en'></option>
+        </datalist>
+    </body>
+</html>

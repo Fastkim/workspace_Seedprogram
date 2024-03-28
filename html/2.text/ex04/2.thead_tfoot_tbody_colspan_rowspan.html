@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>thead tfoot tbody colspan rowspan</title>
+    </head>
+    <body>
+        <table border='1'>
+            <thead>
+                <tr> <!-- 행 -->
+                    <th>방이름</th> <!-- 열 -->
+                    <th>대상</th>
+                    <th>크기</th>
+                    <th>가격</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <tr>
+                    <th>유채방</th>
+                    <td>여성 도미토리</td>
+                    <td rowspan='3'>4인실</td>
+                    <td rowspan='4'>1인 2만원</td>
+                </tr>
+                <tr>
+                    <th rowspan='2'>동백방</th>
+                    <td>동성 도미토리</td>
+                </tr>
+                <tr>
+                    <td>가족1팀</td>
+                </tr>
+                <tr>
+                    <th>촌혜향방</th>
+                    <td></td>
+                    <td>2인실</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan='4'>바깥채 전체를 빌립니다.</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

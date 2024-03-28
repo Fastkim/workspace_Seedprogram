@@ -1,0 +1,20 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => { // DOOM Object
+    console.log($('a').attr('href'))   //attr : atribute , read 할때는 a 객체중에 0번째 원소만 취급
+
+    $('a').attr('href', 'https://www.daum.net') // write 할때는 a 객체중에 0,1,...n번째 모든 원소 취급
+
+    $('a').attr({ // 객체로 표현하면 여러개의 property를 전달할수있다.
+        href: 'https://jquery.com',
+        target: '_blank'
+    })
+
+    $('a').removeAttr('target')
+})
+</script>
+
+<a href='https://www.google.co.kr'>google</a>
+<a href='https://www.naver.com'>naver</a>
+
+

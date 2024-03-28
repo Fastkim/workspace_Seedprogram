@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>item</title>
+        <style>
+            .container {
+                display: grid;
+                border: .1rem solid red;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .item {
+                border: .1rem dotted;
+            }
+
+            .item:nth-child(1) {
+                /* 
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 3; 
+                */
+                grid-column: 1 / span 2;
+                grid-row: 1 / span 2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='item'>11</div>
+            <div class='item'>12</div>
+            <div class='item'>13</div>
+            <div class='item'>21</div>
+            <div class='item'>22</div>
+            <div class='item'>23</div>
+        </div>
+    </body>
+</html>

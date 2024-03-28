@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>pseudo class - valid</title>
+        <style>
+            #age:valid { /* 참인값일 경우 */
+                background-color: chartreuse;
+            }
+
+            #age:invalid { /* 거짓인값일 경우 */
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <input type='number' id='age' min='3'/>
+        </form>
+    </body>
+</html>

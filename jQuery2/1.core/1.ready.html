@@ -1,0 +1,11 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+jQuery(document).ready(() => $('body').append('<p>one</p>')) // DOOM을 구성
+
+$(documnet).ready(() => $('body').append('<p>two</p>'))
+
+let readyFn = () => $('body').append('<p>three</p>')
+$(documnet).ready(readyFn) // $로 축약가능
+
+$(() => $('body').append('<p>four</p>'))
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>float</title>
+        <style>
+            div {
+                padding: 1rem;
+                margin: 1rem;
+                border: .1rem solid;
+                float: left; /* 하늘로 띄워 배치한거라고 생각*/
+            }
+
+            #three {
+                clear : left; /* float 상태의 제거 */
+            }
+        </style>
+    </head>
+    <body>
+        <div>one</div>
+        <div>two</div>
+        <div id='three'>three</div>
+        <div>four</div>
+    </body>
+</html>

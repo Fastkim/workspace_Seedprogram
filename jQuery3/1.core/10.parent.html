@@ -1,0 +1,25 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    console.log($('.4').parent()) // 직계부모만 select
+
+    console.log($('.4').parents()) // 부모태그 모두 select html, body는 브라우저가 자동생성
+
+    console.log($('.4').parents('div')) // 부모중에서 div만 select했다.
+
+    console.log($('.4').parentsUntil('div.1')) // div1 전(미만)까지만 select
+
+    console.log($('.4').closest('div')) // 기준에서 가장 가까운 div(이상)이므로 본인을 select
+})
+</script>
+<pre>
+    <div class='1'>
+        <div class='2-1'>
+            <div class='3'>
+                <div class='4'></div>
+            </div>
+        </div>
+        <div class='2-2'></div>
+        <div class='2-3'></div>
+    </div>
+</pre>

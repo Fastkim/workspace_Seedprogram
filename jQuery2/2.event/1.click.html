@@ -1,0 +1,11 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let cnt = 0
+    $('button').eq(0).click(() => $(`<li>${cnt++}</li>`).appendTo('ul'))
+    $('button').eq(1).click(() => $('ul').empty())    
+})
+</script>
+<button type='button'>click</button>
+<button type='button'>click</button>
+<ul></ul>

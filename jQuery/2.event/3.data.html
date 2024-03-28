@@ -1,0 +1,15 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('button').click('abel', e => {
+        let userName = $(':text').val()
+        if(userName == e.data)
+            $('span').text(` valid: ${e.data}`).show().fadeOut(3000) // show()를 안넣으면 submit 작동한번 했을때 다음번이 안됨.
+        else $('span').text(` invalid: ${userName}`).show()
+    }) // event의 e , event 객체도 파라미터로 가질수있다, 'abel'이 e의 property value로 사용
+})
+</script>
+<form>
+    <input type='text' name='userName' placeholder='사용자명'/><span></span><br>
+    <button type='button'>submit</button>
+</form>

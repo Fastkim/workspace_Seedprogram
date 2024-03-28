@@ -1,0 +1,11 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('a').click(e => {
+        e.preventDefault()
+        $('body').append('<p>prevent default handler.</p>')
+    })
+    
+})
+</script>
+<a href='http://jquery.com'>jquery</a>

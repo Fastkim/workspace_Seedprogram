@@ -1,0 +1,37 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('li').each((i, e) => console.log(i, e)) // iterating : each(index, elements)
+
+    // 과제: e의 type을 조사하라.
+    $('li').each((i, e) => console.log(typeof e))
+
+    // 과제: text를 출력하세요.. result : A, B, C
+    $('li').each((i, e) => console.log(e))
+
+    console.log($('li').text()) // join해서 String으로 만들어서 return함.
+
+    // 과제: 아래 결과가 나오도록 하라.
+    $('li').each((i, e) => console.log(i, e.id))
+    //
+    // 0 'a'
+    // 1 'b'
+    // 2 'c'
+
+    //jQuery = $ , utility function, javascript 객체를 대상으로 할때는 uf 사용
+    // array object는 키가 자동으로 부여(index)
+    jQuery.each([1, 2, 3, 4],((i, e) => console.log(`[${i}]: `, e)))
+    
+    // HTMLelement는 console에서 태그형태로 보여준다.
+    $.each($('li').toArray(), (i, e) => console.log(i, e))// HTMLelement 타입의 원소를 가지고 있는 Array 타입이다.
+
+    // object는 수동으로 키 부여
+    $.each({userName: 'adelia', age: 20}, (k, v) => console.log(k, ':', v))
+})
+</script>
+
+<ul>
+    <li id='a'>A</li>
+    <li id='b'>B</li>
+    <li id='c'>C</li>
+</ul>

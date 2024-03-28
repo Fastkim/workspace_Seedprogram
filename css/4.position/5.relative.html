@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>relative</title>
+        <style>
+            div {
+                padding: 3rem;
+                float: left;
+            }
+
+            .one {
+                background: red;
+            }
+
+            .two {
+                background: orange;
+                /* position: relative(상대위치) */
+                position: relative; /* position: static 일때 배치될뻔한 곳이 원점(주황박스 왼쪽 상단 꼭지점)*/
+                left: 2rem;
+                top: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='one'></div>
+        <div class='two'></div>
+    </body>
+</html>

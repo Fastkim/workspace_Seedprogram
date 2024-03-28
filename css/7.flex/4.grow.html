@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>grow</title>
+        <style>
+            .container {
+                display: flex;
+                border: .1rem red solid;
+                width: 20rem;
+            }
+
+            .item {
+                border: .1rem dotted;
+                flex-basis: 3rem; /* auto */
+                
+                /*flex-grow: 1; true, false 컨테이너를 가득채울만큼 늘어남*/
+                /* 
+                width: 3rem;
+                word-break: break-all;
+                word-wrap: wrap; 
+                */
+            }
+
+            .item:nth-child(1) {
+                flex-grow: 1;
+            }
+
+            .item:nth-child(2) {
+                flex-grow: 3;
+            }
+
+            .item:nth-child(3) {
+                flex-grow: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='item'>111</div>
+            <div class='item'>222222222</div>
+            <div class='item'>333</div>
+        </div>
+    </body>
+</html>

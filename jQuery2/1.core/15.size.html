@@ -1,0 +1,18 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let h1 = $('h1')
+    // 새로고침하지 않고 width()와 height()의 값이 변하게끔 만들어라.
+    // setInterval(() => console.log(h1.width(), h1.height()), 3000)
+
+    h1.width('5rem')
+    h1.height('5rem')
+})
+</script>
+<style>
+    h1 {
+        border: .1rem solid;
+    }
+</style>
+<h1>HELLO</h1>
+<h1>WORLD</h1>

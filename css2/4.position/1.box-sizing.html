@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>box-sizing</title>
+        <style>
+            div {
+                width: 5rem; /* content-box의 길이 */
+                height: 5rem; /* content-box의 길이 */
+                padding: 2rem;
+                border: .1rem solid;
+                margin: 1rem;
+            }
+
+            #two { /* default값, content를 기준으로 width,height 설정 */
+                box-sizing: content-box;
+            }
+
+            /* border + padding을 기준으로 설정 
+               (5rem x 5rem 안에 border+padding 포함하여 content 사이즈 설정) */
+            #three {
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <div id='two'></div>
+        <div id='three'></div>
+    </body>
+</html>

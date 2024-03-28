@@ -1,0 +1,32 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('button').click(() => {
+        $('span').empty() // <span>을 비우기
+
+        let isGood = true // flag variable
+        $('input').each((i, e) => {
+            if(!$(e).val()) { 
+                $(e).parent().next().text(`${e.name} 입력하세요.`).css('color', 'red')
+                isGood = false
+            }
+        })
+        isGood && $('form').submit()
+    })
+})
+</script>
+
+<body>
+    <form>
+        <label>ID: <input type='text' name='id'/></label><span></span><br>
+        <label>PW: <input type='text' name='pw'/></label><span></span><br>
+        <button type='submit'>로그인</button>
+    </form>
+</body>
+<!--
+    과제: login form을 구현하라.
+    로그인 버튼을 눌렀을 때,
+    - id, pw가 입력됐으면, form을 제출하라.
+    - id 또는 pw가 미입력됐으면, field 별로 error msg 을 출력하라.
+    - 위 error가 발생한 경우, form을 제출하지 말라.
+-->

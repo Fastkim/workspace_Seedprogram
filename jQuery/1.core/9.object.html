@@ -1,0 +1,18 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => { 
+    let $div1 = $('div') // JQuery object
+    let $div2 = $div1.eq(0) // eq(0)은 JQuery를 return
+    let div3 = $div1.get(0) // get()은 HTML element를 return
+    console.log($div1, $div2, div3) 
+    console.log(typeof $div1, typeof $div2, typeof div3)
+
+    let $div11 = $('div')
+    let $div22 = $div11.eq(0)
+    let div33 = $div11.get(0) // get은 collection 안에서 순수하게 데이터(객체주소)를 가져온다.
+    // 과제: $div1, $div11 / $div2 , $div22 / div3, div33 들이 서로 같은 건지 확인하라.
+    console.log($div1 == $div11, $div2 == $div22, div3 == div33)
+
+    // $div1 과 $div11의 경우 동일하게 생긴 코드이지만 다른 주소값을 가지고있는 다른객체이다.
+})
+</script>

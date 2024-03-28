@@ -1,0 +1,29 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let h1 = $('h1')
+    
+    h1.addClass('blue') // 클래스로 css적용(bootstrap도 해당)
+    h1.removeClass('blue') // 클래스적용 해제
+    // remove하고 나서 toggle이기 때문에 add로 적용된다.
+    h1.toggleClass('blue')
+
+    // 과제: 페이지 새로고침 후, 검파검파...를 N번하는 걸 구현하라.
+    // setInterval(() => h1.toggleClass('blue'), 1000)
+
+    console.log(h1.hasClass('blue'))
+
+    // 과제: h1.blue 이면 console에 'blue'를 출력하라.
+    // if(h1.hasClass('blue')) console.log('blue')
+    h1.hasClass('blue') && console.log('blue') // javascript 세계에서는 이 코드를 더 선호
+
+    // console.log(h1.hasClass('blue')) // 현재 시점에 적용되고 있는 클래스를 확인할 수 있다.
+})
+</script>
+<style>
+    .blue {
+        color: blue;
+    }
+</style>
+<h1>HELLO</h1>
+<h1>WORLD</h1>

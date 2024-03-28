@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>columns</title>
+        <style>
+            .container {
+                display: grid;
+                border: .1rem solid red;
+                /* 칼럼의 크기를 조정 */
+                /* 100% width를 기준으로 균등하게 배분*/
+                grid-template-columns: auto auto auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='item'>11</div>
+            <div class='item'>12</div>
+            <div class='item'>13</div>
+            <div class='item'>21</div>
+            <div class='item'>22</div>
+            <div class='item'>23</div>
+        </div>
+    </body>
+</html>

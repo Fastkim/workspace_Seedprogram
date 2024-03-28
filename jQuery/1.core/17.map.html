@@ -1,0 +1,29 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    // S.fn.init : collection
+    let ids = $('li').map((i, e) => e.id) // ids는 collection
+    console.log(ids)
+
+    // 과제: ids를 'abc'로 serializing 해서 idStr에 할당하라.
+    let idStr = ids.toArray().join('')
+    console.log(idStr)
+
+    console.log(ids.get())
+    ids = $.map(ids.get(), (e, i) => e + 1) // utility.map은 array를 대상
+    console.log(ids)
+
+    let arr = $.map({
+        userName: 'adelia',
+        age: 20
+    }, (v, k) => v)
+    console.log(arr)
+
+})
+</script>
+
+<ul>
+    <li id='a'>A</li>
+    <li id='b'>B</li>
+    <li id='c'>C</li>
+</ul>

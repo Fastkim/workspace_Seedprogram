@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>paragraph</title>
+        <style>
+            p {
+                border: .1rem solid;
+            }
+
+            .right {
+                text-align: right; /* 오른쪽정렬 */
+            }
+
+            .center {
+                text-align: center;
+            }
+
+            .bigLine { /* 위아래 줄 여백 */
+                line-height: 2rem;
+            }
+
+            .overflow {
+                width: 20rem;
+                white-space: nowrap; /* 자동줄바꿈 없애기 */
+                overflow: hidden; /* 블록보다 넘치는부분을 유령으로 감추기 */
+            }
+        </style>
+    </head>
+    <body>
+        <p>하늘에서 내리던 비가 그쳤다. 하얀 구름 사이로 햇살이 지나간 자리에 무지개가 떠오른다. </p>
+        <p class='right'>하늘에서 내리던 비가 그쳤다. 하얀 구름 사이로 햇살이 지나간 자리에 무지개가 떠오른다. </p>
+        <p class='center'>하늘에서 내리던 비가 그쳤다. 하얀 구름 사이로 햇살이 지나간 자리에 무지개가 떠오른다. </p>
+        <p class='bigLine'>하늘에서 내리던 비가 그쳤다. 하얀 구름 사이로 햇살이 지나간 자리에 무지개가 떠오른다. </p>
+        <p class='overflow'>하늘에서 내리던 비가 그쳤다. 하얀 구름 사이로 햇살이 지나간 자리에 무지개가 떠오른다. </p>
+    </body>
+</html>

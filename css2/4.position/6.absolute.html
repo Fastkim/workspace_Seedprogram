@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>absolute</title>
+        <style>
+            div {
+                padding: 3rem;
+            }
+
+            #container {
+                /* static이 아니여야 기준이 될 수 있음. */
+                position: relative;
+                padding: 10rem;
+                border: .1rem solid;
+            }
+
+            .one {
+                background: red;
+                /* left,top이 없을때 배치되는 위치는 크롬에서 정한 기본값 */
+                position: absolute; 
+                left: 2rem;
+                top: 1rem;
+            }
+
+            .two {
+                background: orange;
+                position: absolute;
+                left: 5rem;
+                top: 4rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='container'>
+            <div class='one'></div>
+            <div class='two'></div>
+        </div>
+    </body>
+</html>

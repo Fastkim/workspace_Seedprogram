@@ -1,0 +1,24 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    // 앞의 div 객체를 hr객체에 copy 해서 추가한것. hr 위에서 속으로 move
+    $('hr').append($('div')) // 관점의 차이 결과값은 동일하다.
+    $('div').appendTo($('hr')) 
+})
+</script>
+<style>
+div {
+    background-color: orange;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+}
+
+hr {
+    border: .1rem solid;
+}
+</style>
+<div></div>
+<div></div>
+<hr>
+<hr>

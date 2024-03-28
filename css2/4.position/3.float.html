@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>float</title>
+        <style>
+            div {
+                padding: 1rem;
+                margin-right: .5rem;
+            }
+            
+            .one {
+                background: red;
+                float: left
+            }
+
+            .two {
+                background: orange;
+                border: .2rem solid;
+            }
+
+            .three {
+                background: yellow;
+                float: left;
+            }
+
+            .four {
+                background: green;
+                float: left;
+            }
+
+            .five {
+                background: lightgreen;
+                border: .2rem solid;
+                clear: both; /* float과 연관되지 말고 다음줄에 서*/
+            }
+        </style>
+    </head>
+    <body>
+        <body>
+            <div class='one'>one</div>
+            <div class='two'>two</div>
+            <div class='three'>three</div>
+            <div class='four'>four</div>
+            <div class='five'>five</div>
+        </body>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>input attribute</title>
+    </head>
+    <body>
+        <form action=''>
+            <!-- name은 하나의 페이지 내에 n개 / id는 1개-->
+            <input type='text' name='userId' id='userId'/><br>
+            <!-- value(자동) = 기본값, readonly 값을 고정시킴-->
+            <input type='text' value='flower' readonly/><br>
+            <!-- placeholder : 필드(박스) 안에 label을 집어넣는 방법-->
+            <input type='text' placeholder='이름'/><br>
+            <!-- autofocus : 포커스(커서 깜빡임) attribute가 있는곳에 포커스가 생김-->
+            <input type='text' autofocus/><br>
+            <!-- minlength : 최소 텍스트길이 maxlength : 최대 텍스트 길이
+            required : 데이터가 반드시 존재해야함. -->
+            <input type='text' minlength='3' maxlength='5' required/><br>
+            <input type='number' min='1' max='6'/><br>
+            <input type='date' min='2024-03-01' max='2024-03-03'/><br>
+            <input type='time' min='9:00' max='13:00'/><br>
+
+            <input type='submit' value='전송'/>
+            <!-- 두번째 객체로 데이터를 전송하고 싶을때 formaction, formmethod : 전송방식,
+                 formtarget:양식을 제출한 후 수신된 응답을 표시할 위치를 나타내는 이름이나 키워드 지정 -->
+            <input type='submit' formaction='#' formmethod='post' formtarget='msg'/><br>
+            <input type='file' multiple/> <!-- 파일첨부 -->
+        </form>
+    </body>
+</html>

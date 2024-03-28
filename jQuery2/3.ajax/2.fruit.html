@@ -1,0 +1,41 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    // 과제 테이블을 채워라.
+    let table = $('tbody')
+    
+    $('button').click(() => {
+        $.ajax({
+            url: '2.data.json',
+            success: data => {
+                let fruits = data.fruits // [{}] : array안에 object가 담김
+                let fruit, col, val, tr, td // variable 선언
+
+                for(let row in fruits) { // 키를 뽑아내는 in
+                    fruit = fruits[row] // fruits[0], fruits[1] 인덱스를 가지고있다, fruit는 객체에만 담겨있음.
+                    tr = table.find('tr').eq(row)
+
+                    col = 0
+                    for(let key in fruit) {
+                        val = fruit[key]
+                        td = tr.find('td').eq(col++) // ++col은 버그.
+                        td.text(val) 
+                    }
+                }
+            }
+        })
+    })
+})
+</script>
+
+<button type='button'>load</button>
+
+<table>
+    <thead>
+        <tr><th>이름</th><th>가격</th><th>기한</th><th>생산자</th></tr>
+    </thead>
+    <tbody>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+</table>

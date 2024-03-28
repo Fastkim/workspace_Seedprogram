@@ -1,0 +1,56 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('#wrap').on({
+        mouseenter: function() {
+            $(this).removeClass().addClass('circle mouseenter')
+        },
+        // 과제: mouseleave event handler를 기술하라.
+        //       원 background-color 를 없앤다.
+        mouseleave: function() {
+            $(this).removeClass().addClass('circle mouseleave')
+        }
+    }, '.circle') 
+
+    
+    // $('button').on('click', () => $('<div></div>').addClass('circle').appendTo('#wrap')) // 1개 추가
+    $('button').on('click', () => $('div.circle').clone().appendTo('#wrap')) // 복제 추가
+    
+    // $('button').on('click', () => $('span').text(' clicked. ')) // 1개의 이벤트등록도 가능.
+})
+
+
+</script>
+
+<style>
+    #wrap {
+        margin: 1rem;
+        border: .1rem dotted;
+    }
+
+    .circle {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 2.5rem;
+        border: .1rem solid;
+    }
+
+    .mouseenter {
+        background: red;
+    }
+
+    .mouseleave {
+        background: '';
+    }
+    .square {
+        width: 5rem;
+        height: 5rem;
+        border: .1rem solid;
+    }
+</style>
+<button type='button'>create</button>
+
+<div id='wrap'>
+    <div class='circle'></div>
+    <div class='square'></div>
+</div>

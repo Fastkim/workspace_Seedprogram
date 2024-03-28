@@ -1,0 +1,27 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //과제: 전화번호를 숫자만으로 정제하라.
+    /*
+    let phoneNum = $('input').val()
+    let refinedPhoneNum = ''
+
+    for(let char of phoneNum)
+        if('0' <= char && char <= '9')
+            refinedPhoneNum += char
+
+    $('input').val(refinedPhoneNum)
+    */
+    /*
+    $('input').val($('input').val().split('-').join(''))
+    */
+    let phNum = $('input').val()
+    let phRefine = phNum.split('').filter(e => e >= 0 && e <=9).join('')
+    $('input').val(phRefine)
+})
+</script>
+<form>
+    <input type='tel' value='010-1234-5678'/>
+</form>
+
+<!-- move,clone,write,read,style change : 1장에서 jquery를 가지고 -->

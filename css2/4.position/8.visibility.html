@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>visibility</title>
+        <style>
+            div {
+                padding: 3rem;
+                margin: 1rem;
+                float: left;
+            }
+
+            .one {
+                background: red;
+            }
+
+            .two {
+                background: orange;
+                /* 투명인간 : 자리는 차지하고있음 */
+                visibility: hidden; 
+            }
+
+            .three {
+                background: green;
+            }
+
+            .one2 {
+                background: red;
+                /* 과제 : 2줄로 만들어보아라 clear:left를 사용해도 됨*/
+                clear:both; 
+            }
+
+            .two2 {
+                background: orange;
+                display: none; /* 유령으로 만들기 (메모리로는 존재) */
+            }
+
+            .three2 {
+                background: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='one'></div>
+        <div class='two'></div>
+        <div class='three'></div>
+
+        <div class='one2'></div>
+        <div class='two2'></div>
+        <div class='three2'></div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    /*
+    for(let i = 0; i < 10; i++)
+        $(`<li>item ${i}</li>`).appendTo('ul')
+    */
+    // appendTo(rendering 작업)를 최소화하는것이 리소스를 아낄수있다.
+    // IO(Input/Output)를 최소화 한다.
+    let items = []
+    for(let i = 0; i < 10; i++)
+        items.push(`<li>item ${i}</li>`)
+
+    $(items.join('')).appendTo('ul')
+})
+</script>
+<ul></ul>

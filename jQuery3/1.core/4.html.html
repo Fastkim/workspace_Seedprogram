@@ -1,0 +1,25 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    console.log($('h1').html()) // read 작업
+
+    $('footer').html('<mark>foot</mark>') // write 작업
+    console.log($('footer').html())
+
+    console.log($('header').find('h1').eq(1).html()) // index는 0부터 시작
+
+    console.log
+})
+</script>
+<header>
+    <h1><b>hello</b></h1>
+    <h1>world</h1>
+</header>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<footer></footer>

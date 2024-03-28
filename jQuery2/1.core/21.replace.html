@@ -1,0 +1,34 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let greet = ' hello world'
+    log(greet.replace(' ', '')) // 처음만나는 공백만 제거
+    log(greet.replaceAll(' ', '')) // 변수 안의 모든 공백제거
+    log(greet.replace(/\s/g, '')) // g는 global, s는 space, 모든공백 제거
+    log(greet.replace(/^\s/g, '')) // 
+    log(greet.replace(/\s$/g, ''))
+    log(greet.replace(/^\s|\s$/g, ''))    
+
+    /*g : 모든 패턴 체크(global)
+    i : 대소문자를 구별없이 체크
+    m : 여러줄 체크
+
+    ^ : 처음
+    $ : 끝
+    . : 한문자*/
+
+    greet = '1-2-3-4,5'
+    console.log(greet.replace(/-/g, '')) // 하이푼제거
+    console.log(greet.replace(/,/g, '')) // 콤마제거
+    console.log(greet.replace(/[-,]/g, '')) // 콤마 하이푼 모두 제거
+
+    greet = 'hello\nworld'
+    console.log(greet)
+    // 과제: helloworld 가 출력되도록 하라.
+    console.log(greet.replace(/\n/g, '')) // 줄바꿈을 없애라.
+})
+
+function log(str) {
+    console.log('|' + str + '|')
+}
+</script>

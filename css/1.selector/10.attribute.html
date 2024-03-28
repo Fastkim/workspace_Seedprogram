@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>attribute</title>
+        <style>
+            a[target] {
+                border: .1rem solid;
+            }
+
+            a[href='fire.html'] {
+                text-decoration: none; /* a 태그의 기본스타일인 밑줄을 없앴다. */
+            }
+
+            a[class~='best'] {
+                background: yellow; /* dotted는 점선, ~= 'best' 단어를 포함하는 문자열이 있는 태그에 스타일적용 */
+            }
+
+            a[class|='best'] {
+                border: .1rem dotted; /* dotted는 점선, |= 'best'를 접두사로 포함하는 곳에 스타일적용 */
+            }
+
+            a[class^='best'] {
+                background: lightgreen; /* best라는 글자로 시작하면 */
+            }
+
+            a[class$='best'] {
+                background: pink; /* best라는 글자로 끝나면 */
+            }
+
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href='tree.html' target='_blank'>목</a></li>
+            <li><a href='fire.html'>화</a></li>
+            <li><a class='my best choice'>토</a></li>
+            <li><a class='best-choice'>토</a></li> <!-- -(하이푼)을 사용하면 접두사로 만들어줌.-->
+            <li><a class='mybest'>토</a></li>
+        </ul>
+    </body>
+</html>

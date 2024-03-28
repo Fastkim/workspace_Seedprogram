@@ -1,0 +1,12 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => { // on : 여러이벤트를 한번에 등록, 첫번째 파라미터로 이벤트종류 구분
+    $('button').on('click', () => $('span').text(' clicked. ')) // 1개의 이벤트등록도 가능.
+
+    $('button').on({
+        mouseover: () => $('span').text(' overed.'), // 커서를 버튼위에 둘때
+        mouseout: () => $('span').text(' outed.') // 커서를 버튼 밖으로 둘때
+    })
+})
+</script>
+<button type='button'>confirm</button><span></span>

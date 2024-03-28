@@ -1,0 +1,29 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    // enter를 쳤을때 로그인되는 이벤트는 change이다.
+    // 과제: change event가 발생한 객체의 value를 span 출력하라. (soft coding)
+    /*
+    $('#wrap').on({
+        change() {
+            $('span').text($(this).val())
+        }
+    }, '.c') // '.c' wrap 하위 태그클래스
+    */
+    $('#wrap').on('change', '.c', function() {
+        $('span').text($(this).val())
+    })
+})
+</script>
+<div id='wrap'>
+    <select id='fruit' class='c'>
+        <option>select1</option>
+        <option>select2</option>
+    </select>
+    <input type='checkbox' value='check' class='c'/>
+    <input type='radio' value='radio' class='c'/>
+
+    <input type='text' class='c'/>
+</div>
+
+<span></span>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>var</title>
+        <style>
+            div {
+                width: 5rem;
+                height: 5rem;
+                margin-bottom: 3rem;
+            }
+
+            :root{
+                --bg-color: pink;
+            }
+
+            #box1 {
+                background-color: var(--bg-color);
+            }
+
+            #box2 {
+                background-color: var(--bg-color);
+            }
+        </style>
+    </head>
+    <body>
+        <div id='box1'></div>
+        <div id='box2'></div>
+    </body>
+</html>

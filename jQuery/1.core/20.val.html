@@ -1,0 +1,47 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    // 과제: <input type='text' ~ 객체를 text 에 담아라.
+    let txt = $(':text')
+    console.log(txt)
+    console.log('|' + txt.val() + '|')
+    
+    txt.val(' world ')
+    // 과제: txt 의 value를 trim 해서, txt 객체에 저장하라.
+    txt.val(txt.val().trim())
+
+    txt.val((i, v) => `hello ${v}`)
+
+    // 과제: checked 객체의 value 들을 출력하라.
+    // $(':checked').val((i, v) => console.log(v))
+    let checked = $(':checked') 
+    checked.val((i, v) => console.log(v))
+
+    $(':checked').each((i, e) => console.log(e.value))
+    $(':checked').each((i, e) => console.log($(e).val()))
+
+    $('input').val(['noon', 'sea', 'banana'])
+    $('#fruit').val('banana')
+    $('#greens').val(['cucumber', 'carrot'])
+})
+</script>
+<form>
+    <input type='text' value=' hello '/><br>
+
+    <input type='checkbox' value='night' checked/>밤
+    <input type='checkbox' value='noon'/>낮<br>
+
+    <input type='radio' value='mountain' name='nature' checked/>산
+    <input type='radio' value='sea' name='nature'/>바다<br>
+
+    <select id='fruit'> <!-- 목록 -->
+        <option>apple</option> <!-- selected(checked) -->
+        <option>banana</option>
+    </select>
+
+    <select id='greens' multiple>
+        <option>cucumber</option>
+        <option>cabbage</option>
+        <option>carrot</option>
+    </select>
+</form>

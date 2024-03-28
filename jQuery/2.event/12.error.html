@@ -1,0 +1,13 @@
+<script>
+    window.onerror = (msg, url, line, col, err) => { 
+        document.write(`${msg} <br>`)
+        document.write(`at ${line}:${col} of ${url}`)
+        document.write('<hr>')
+        document.write(err)
+
+        // message = 에러메세지
+        // url = 에러가 발생한 스크립트의 URL
+        // line, col = 에러가 발생한 곳의 줄과 열 번호
+        // error = 에러 객체
+    }
+    </script>

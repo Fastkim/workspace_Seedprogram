@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>clip</title>
+        <style>
+            /* 과제:너비 7rem, 높이 7rem, 배경색 노랑인 사각형 3개를 만들어라. */
+            div {
+                width: 7rem;
+                height: 7rem;
+                background-color: yellow;
+                margin: 1rem;
+                border: .5rem dotted;
+                padding: .3rem; 
+            }
+
+            .two {  /* background의 범위를 경계선까지 설정, default 값*/
+                background-clip: border-box;
+            }
+
+            .three { /* background의 범위를 패딩까지 설정*/
+                background-clip: padding-box;
+            }
+            
+            .four { /* background의 범위를 콘텐츠까지 설정*/
+                background-clip: content-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <div class='two'></div>
+        <div class='three'></div>
+        <div class='four'></div>
+    </body>
+</html>
