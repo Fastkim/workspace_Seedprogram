@@ -20,7 +20,7 @@ print(df)
 # 1702     Zimbabwe    Africa  2002   39.989  11926563  672.038623
 # 1703     Zimbabwe    Africa  2007   43.487  12311143  469.709298
 
-c = df.loc[0] # loc[row index], Name field value == 0 , loc : 특정 row값을 return
+c = df.loc[0] = [1, 1, 1, 1, 1, 1] # loc[row index], Name field value == 0 , loc : 특정 row값을 return
 print(c)
 # country      Afghanistan
 # continent           Asia
@@ -38,12 +38,6 @@ print(d)
 # pop              8425333
 # gdpPercap     779.445314
 # Name: 0, dtype: object
-# country      Afghanistan
-# continent           Asia
-# year                1952
-# lifeExp           28.801
-# pop              8425333
-# gdpPercap     779.445314
 
 e = df.loc[[0, 10, 100]]
 print(e)
@@ -59,14 +53,14 @@ print(f)
 # 10   Afghanistan      Asia  2002   42.129  25268405  726.734055
 # 100   Bangladesh      Asia  1972   45.252  70759295  630.233627
 
-g = df.loc[[0, 10, 100], ['country', 'year']]
+g = df.loc[[0, 10, 100], ['country', 'year']] # [[rows], [columns]]
 print(g)
 #          country  year
 # 0    Afghanistan  1952
 # 10   Afghanistan  2002
 # 100   Bangladesh  1972
 
-h = df.iloc[[0, 10, 100], [0, 2]]
+h = df.iloc[[0, 10, 100], [0, 2]] # iloc의 경우 index로 불러오기때문에 column도 index로 표현할수있다. [0, 2] 나올 열의 index 나열 , 0, 2열
 print(h)
 #          country  year
 # 0    Afghanistan  1952
@@ -76,6 +70,7 @@ print(h)
 print(df['year'].mean()) # 1979.5
 print(df[df['year'] > df['year'].mean()])
 
+# 데이터 통합
 df1 = pd.read_csv('concat_1.csv')
 df2 = pd.read_csv('concat_2.csv')
 df3 = pd.read_csv('concat_3.csv')

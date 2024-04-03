@@ -13,9 +13,9 @@ print(lifeExp.min()) # 최솟값
 print(lifeExp.max()) # 최댓값
 print(lifeExp.std()) # 표준편차
 
-print(lifeExp.describe())
+print(lifeExp.describe()) # 위를 모아놓은 패키지
 
-print(lifeExp.drop_duplicates())
+print(lifeExp.drop_duplicates()) # 중복되는 내용 제거
 
 # csv (comma seperated value) : 각각의 값을 ,(컴마)로 구분해서 데이터저장하는 방식 (보편적인 방식)
 # tsv (tab seperated value) : 탭으로 구분

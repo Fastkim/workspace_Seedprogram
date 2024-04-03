@@ -42,6 +42,6 @@ print(box)
 box.sort(reverse=True) # 내림차순 정렬
 print(box)
 
-box = ['car', 'apple', 'banana']
+box = ['car', 'apple', 'banana'] # a, b, c 순서
 box.sort()
 print(box)

@@ -33,8 +33,8 @@ print(str1.replace('th', 'mo')) #대체하기
 
 # format()
 print('I eat {} apples.'.format(5))
-print('I love {} amd {}.'.format('you', 'me'))
-fruitName = 'banana'
+print('I love {} and {}.'.format('you', 'me'))
+fruitName = 1
 print(f'I wash the {fruitName}.')
 
 # split()
@@ -54,4 +54,3 @@ print(f'|{str.rstrip()}|')
 print(f'|{str.strip()}|')
 
 str = '--hello'
-print(str.strip('-'))
