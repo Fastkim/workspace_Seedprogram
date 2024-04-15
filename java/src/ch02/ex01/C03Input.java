@@ -13,11 +13,23 @@ public class C03Input {
 		String result = sc.nextLine();
 		System.out.println(result + "을 입력했습니다.");
 		*/
-		
-		System.out.print("숫자를 입력하세요.\n> ");
+		/*
+		System.out.print("숫자를 입력하세요.\n> "); // \n 은 nextInt가 읽지 않고 넘김.
 		int i = sc.nextInt();
 		System.out.println(i + "을 입력했습니다.");
 		
+		System.out.print("숫자를 입력하세요.\n> ");
+		i = sc.nextInt();
+		System.out.println(i + "을 입력했습니다.");
+		sc.nextLine(); // 초기화
 		
+		System.out.println("문자열을 입력하세요.\n> ");
+		String result = sc.nextLine();
+		
+		System.out.println( result + "을 입력했습니다.");
+		*/
+		System.out.print("문자를 입력하세요.\n> ");
+		char c = sc.nextLine().charAt(0);
+		System.out.println(c + "를 입력했습니다.");
 	}
 }
