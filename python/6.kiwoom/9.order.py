@@ -91,12 +91,17 @@ class Kiwoom(QAxWidget):
             self.SetInputValue('종목코드', stockCode)
             self.SetInputValue('수정추가구분', '1')
             self.CommRqData('일봉', 'opt10081', 2, '0001')
-            candles += self.response
-            time.sleep(1)
+            try:
+                candles += self.response
+            except:pass
+            time.sleep(0.3)
         
-        df = pd.DataFrame(candles, columns=['date', 'close', 'open', 'high', 'low', 'volume']).set_index('date')
-        df = df.drop_duplicates() # 중복제거
-        df = df.sort_index() # 날짜로 정렬
+        df = pd.DataFrame()
+        try:
+            df = pd.DataFrame(candles, columns=['date', 'close', 'open', 'high', 'low', 'volume']).set_index('date')
+            df = df.drop_duplicates() # 중복제거
+            df = df.sort_index() # 날짜로 정렬
+        except: pass
         return df # 일봉으로 채워진 테이블이 return
 
 

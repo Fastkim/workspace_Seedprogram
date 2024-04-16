@@ -47,25 +47,29 @@ class Kiwoom(QAxWidget):
         time.sleep(1) # 1초동안 잠들게, request를 쉼없이 보내면 키움에서 차단당함.
 
     def getCandles(self, stockCode):
-        self.SetInputValue('종목코드', stockCode)
-        self.SetInputValue('수정추가구분', '1')
-        self.CommRqData('일봉', 'opt10081', 0, '0001') # request 보내기.
-        self.el.exec() # 창을하나 보내기, el(event loop), loop를 시작, javascript의 away 기능을 함.
-        candles = self.response
-        time.sleep(1)
-
-        while self.isnext: # 600개가 넘으면 이 while문에 들어온다.
             self.SetInputValue('종목코드', stockCode)
             self.SetInputValue('수정추가구분', '1')
-            self.CommRqData('일봉', 'opt10081', 2, '0001')
-            candles += self.response
+            self.CommRqData('일봉', 'opt10081', 0, '0001') # request 보내기.
+            self.el.exec() # 창을하나 보내기, el(event loop), loop를 시작, javascript의 away 기능을 함.
+            candles = self.response
             time.sleep(1)
-        
-        df = pd.DataFrame(candles, columns=['date', 'close', 'open', 'high', 'low', 'volume']).set_index('date')
-        df = df.drop_duplicates() # 중복제거
-        df = df.sort_index() # 날짜로 정렬
-        return df # 일봉으로 채워진 테이블이 return
 
+            while self.isnext: # 600개가 넘으면 이 while문에 들어온다.
+                self.SetInputValue('종목코드', stockCode)
+                self.SetInputValue('수정추가구분', '1')
+                self.CommRqData('일봉', 'opt10081', 2, '0001')
+                try:
+                    candles += self.response
+                except:pass
+                time.sleep(0.3)
+            
+            df = pd.DataFrame()
+            try:
+                df = pd.DataFrame(candles, columns=['date', 'close', 'open', 'high', 'low', 'volume']).set_index('date')
+                df = df.drop_duplicates() # 중복제거
+                df = df.sort_index() # 날짜로 정렬
+            except: pass
+            return df # 일봉으로 채워진 테이블이 return
 
     def onLogin(self, status):
         result = '키움증권 연결'

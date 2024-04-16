@@ -14,7 +14,6 @@ class Kiwoom(QAxWidget):
         self.regKey()
         self.regHandlers()
         self.login() # 생성자에서 자동으로 call하도록 추가
-        self.best = {}
         try:
             f = open('best.dat', 'rb')
             self.best = pickle.load(f)
@@ -30,7 +29,7 @@ class Kiwoom(QAxWidget):
         self.OnReceiveTrData.connect(self.onResponse)
         self.OnReceiveMsg.connect(self.onMsg)
         self.OnReceiveChejanData.connect(self.onAfterOrder)
-        self.OnReceiveRealData.connect(self.onReal)
+        # self.OnReceiveRealData.connect(self.onReal)
 
     def setReal(self, screenno, stockCodes, fid, optType):
         self.SetRealReg(screenno, stockCodes, fid, optType)
@@ -151,12 +150,17 @@ class Kiwoom(QAxWidget):
             self.SetInputValue('종목코드', stockCode)
             self.SetInputValue('수정추가구분', '1')
             self.CommRqData('일봉', 'opt10081', 2, '0001')
-            candles += self.response
-            time.sleep(1)
+            try:
+                candles += self.response
+            except:pass
+            time.sleep(0.3)
         
-        df = pd.DataFrame(candles, columns=['date', 'close', 'open', 'high', 'low', 'volume']).set_index('date')
-        df = df.drop_duplicates() # 중복제거
-        df = df.sort_index() # 날짜로 정렬
+        df = pd.DataFrame()
+        try:
+            df = pd.DataFrame(candles, columns=['date', 'close', 'open', 'high', 'low', 'volume']).set_index('date')
+            df = df.drop_duplicates() # 중복제거
+            df = df.sort_index() # 날짜로 정렬
+        except: pass
         return df # 일봉으로 채워진 테이블이 return
 
 
@@ -226,7 +230,7 @@ class Kiwoom(QAxWidget):
     
     def buy(self, stockCode):
         candles = self.getCandles(stockCode)
-
+        
         if not candles.empty:
             data = []
             target = []
@@ -244,26 +248,27 @@ class Kiwoom(QAxWidget):
             rf.fit(data, target)
 
             lastCandle = list(candles.iloc[-1])
-            nextP = round(int(rf.predict([lastCandle])[0]), -2) # 10의 자리에서 반올림
+            nextP = round(int(rf.predict([lastCandle])[0]), -2) # 현재가
+            closeP = int(candles.iloc[-1][0]) # 예측가
 
-            closeP = int(candles.iloc[-1][0])
             if nextP > closeP:
-                if self.getDeposit() > closeP:
-                    self.order('매수', 1, stockCode, 1, 0, '03')
+                try:
+                    if self.getDeposit() > closeP:
+                        self.order('매수', 1, stockCode, 1, 0, '03')
 
-                    highP = round(int(closeP * closeP * 0.25), -2)
-                    if nextP > highP: nextP = highP
-                    self.best[stockCode] = nextP
+                        highP = round(int(closeP * closeP * 0.25), -2)
+                        if nextP > highP: nextP = highP
+                        self.best[stockCode] = nextP
 
-                    f = open('best.dat', 'wb')
-                    pickle.dump(self.best, f)
-                    f.close()
+                        f = open('best.dat', 'wb')
+                        pickle.dump(self.best, f)
+                        f.close()
+                except: pass
 
     def sell(self):
         for stock in self.getBalance():
             if stock[0] in self.best.keys():
-                self.order('매도', 2, stock[0], stock[7], self.best[stock[0]], '00')
-
+                self.order('매도', 2, stock[0], stock[7], self.best[stock[0]])
 
 app = QApplication(sys.argv)
 kiwoom = Kiwoom()
@@ -271,7 +276,7 @@ kiwoom = Kiwoom()
 kiwoom.sell()
 
 kospi = kiwoom.getStockCodes('0')
-kosdaq = kiwoom.getStockCodes('10')
+kosdaq = kiwoom.getStockcodes('10')
 
 for stockCode in kospi:
     kiwoom.buy(stockCode)

@@ -1,4 +1,4 @@
-package home.ex01;
+package ch02.home.ex01;
 
 public class H01Replace {
 	public static void main(String[] args) {
