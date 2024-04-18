@@ -2,7 +2,7 @@ package ch04.ex02;
 
 public class C04Switch {
 	public static void main(String[] args) {
-		String comment = "abc";
+		String comment = "ab";
 		
 		String msg = switch(comment.length()) {
 		case 1 -> "too short.";
@@ -20,6 +20,5 @@ public class C04Switch {
 		default -> {yield comment + " is too long";}
 		};
 		System.out.println(msg + "\n");
-		
 	}
 }
