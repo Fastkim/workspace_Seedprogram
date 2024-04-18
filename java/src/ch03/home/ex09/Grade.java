@@ -10,7 +10,7 @@ public class Grade {
 		int eng = 0;
 		int math = 0;
 		int tot = 0;
-		double avg = 0;
+		double avg = 0; 
 		char grade = 0;
 		// presentation logic
 		System.out.print("국어: ");

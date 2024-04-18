@@ -73,7 +73,7 @@ class kiwoom(QAxWidget):
 
                 box.append([stockCode, stockName, q, buyP, rate, close, totP, aQ])
             self.response = box
-        
+        aedjedksadk
         self.el.exit()
         time.sleep(1) # 너무 빠르게 데이터를 불러오면 차단당함.
 
