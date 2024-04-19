@@ -12,6 +12,10 @@ public class C03Lunch {
 				System.out.println("상한 음식을 뱉다.");
 				break;
 			}
+			
+			calorie += food;
 		}
+		
+		System.out.println(calorie + "cal.만큼 먹었습니다.");
 	}
 }
