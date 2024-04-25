@@ -3,6 +3,7 @@ package ch06.ex02.case01.sub;
 import ch06.ex02.case01.A;
 
 public class B {
+	// 다른패키지에서 상속을 하지 않았을 경우의 접근범위
 	public void test() {
 		A a = new A();
 		

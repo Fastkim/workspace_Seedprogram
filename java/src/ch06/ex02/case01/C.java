@@ -2,6 +2,7 @@ package ch06.ex02.case01;
 
 public class C extends A {
 	public void test() {
+		// 상속을 했을때에 접근범위
 		int x = 0;
 		
 		//x = this.a; // private는 상속도 무효화한다.

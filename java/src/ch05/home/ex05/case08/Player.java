@@ -4,7 +4,7 @@ public class Player {
 	private String playerName;
 	private Ball ball;
 	
-	public Ball pass(Ball ball) {
+	public Ball pass(Ball ball) { // parameter는 목적어 느낌쓰
 		return ball;
 	}
 	

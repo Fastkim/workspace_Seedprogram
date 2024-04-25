@@ -5,7 +5,7 @@ public class Parent {
 	private String parentName;
 	private int money;
 	
-	private String getRegNum() {
+	private String getRegNum() { // access modified : private 메서드
 		return regNum;
 	}
 	public String getParentName() {
