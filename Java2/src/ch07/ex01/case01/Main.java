@@ -11,9 +11,8 @@ public class Main {
 		
 		b = (B)a;
 		
-//		String s = (String)c; 내가 갖고있는 타입중에 하나로 casting이 되는것이다.
+//		String s = (String)c; // 내가 갖고있는 타입중에 하나로 casting이 되는것이다.
 	}
 }
 
-
-// 다형성(polymorphism) : 자식타입이 부모타입으로 casting 하는것을 말한다.
+// 다형성(polymorphism) : 자식타입이 부모타입으로 casting 하는것을 말한다. 타입의 다변화

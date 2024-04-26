@@ -1,7 +1,7 @@
 package ch07.ex03;
 
-import ch07.ex02.dao.UserDaoImpl;
 import ch07.ex03.dao.UserDao;
+import ch07.ex03.dao.UserDaoImpl;
 import ch07.ex03.io.Console;
 import ch07.ex03.io.UserIo;
 import ch07.ex03.service.UserService;

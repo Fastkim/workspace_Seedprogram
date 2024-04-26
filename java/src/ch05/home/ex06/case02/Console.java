@@ -36,7 +36,6 @@ public class Console {
 			tmp = sc.nextLine().trim();
 			isValid = tmp.matches("^[1-9][0-9]"); 
 			// "^[1-9][0-9]*" : 두자리숫자를 표현할때에 시작하는 첫번째 자리는 ^[1-9], ^ : 시작하는 숫자라는 의미
-			// 두번째 자리는 [0-9]* 두번째자리는 0개 있어도 되므로 *
 			if(!isValid) Console.err("자연수가 아닙니다.");
 		} while(!isValid);
 		return Integer.parseInt(tmp);

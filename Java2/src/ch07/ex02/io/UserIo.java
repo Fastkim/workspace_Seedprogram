@@ -3,7 +3,7 @@ package ch07.ex02.io;
 import ch07.ex02.service.UserService;
 
 public class UserIo {
-	private UserService userService;
+	private UserService userService; // userService가 dependency 객체이다.
 	
 	public UserIo(UserService userService) {
 		this.userService = userService;
@@ -13,10 +13,11 @@ public class UserIo {
 		Console.info(userService.getUser());
 	}
 }
+
 // domain layer => DB의 데이터와 직접연결
-// persistence layer dao 
-// service layer service
-// presentation layer // io interface를 만들지 않는다, presentation layer의 객체를 member variable로 가지고 있을 계층이 없기 때문이다.
+// persistence layer => dao
+// service layer => service
+// presentation layer => io
 
 // persistence layer <-> service layer <-> presentation layer
 // 각 계층은 인접한 계층과만 대화한다.
