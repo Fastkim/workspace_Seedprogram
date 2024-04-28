@@ -13,17 +13,17 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUser() {
 		return userDao.selectUser();
-	};
+	}
 	
 	@Override
 	public void addUser(User user) {
 		userDao.insertUser(user); 
-	};
+	}
 	
 	@Override
 	public void fixUser(String userName) {
 		userDao.updateUser(userName);
-	};
+	}
 	
 	@Override
 	public void delUser() {

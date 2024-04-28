@@ -2,16 +2,16 @@ package ch07.ex04.case01;
 
 public class Array {
 	public static void main(String[] args) {
-		String[] strs = new String[3]; // 배열객체 strs, 나오는 주소에 String은 배열 원소의 타입이다.
+		String[] strs = new String[3]; // 배열객체 strs, [Ljava.lang.String;@5ca881b5 : 나오는 주소에 String은 배열 원소의 타입이다.
 		System.out.println(strs);
 		
-		Integer[] integers = new Integer[3]; // Integer : int를 표현한 클래스, 
+		Integer[] integers = new Integer[3]; // Integer : int를 표현한 클래스, [Ljava.lang.Integer;@24d46ca6
 		System.out.println(integers);
 		
 		int[] ints = new int[3]; // 클래스타입이 아닌 기본타입도 배열객체 타입으로 설정가능
 		System.out.println(ints);
 		
-		System.out.printf("%d %d %d\n", integers[0], integers[1], integers[2]);
+		System.out.printf("%d %d %d\n", integers[0], integers[1], integers[2]); // null 값으로 초기화 되어있다.
 		System.out.printf("%d %d %d\n", ints[0], ints[1], ints[2]); // 배열도 객체이므로 heap에 공간이 생기고 초기화가 자동으로 된다.
 		
 		ints[0] = 0;

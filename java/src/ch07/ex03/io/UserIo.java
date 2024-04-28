@@ -3,7 +3,7 @@ package ch07.ex03.io;
 import ch07.ex03.domain.User;
 import ch07.ex03.service.UserService;
 
-public class UserIo {
+public class UserIo { //io는 후에 HTML 파일로 될것이다.
 	private UserService userService;
 	
 	public UserIo(UserService userService) {

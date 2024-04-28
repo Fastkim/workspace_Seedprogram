@@ -2,7 +2,7 @@ package ch07.ex04.case05;
 
 import java.util.Scanner;
 
-public interface Console { // utility class : 업무와 관련이 없는것들만 모아두는 클래스
+public interface Console { // utility interface : 업무와 관련이 없는것들만 모아두는 인터페이스
 	Scanner sc = new Scanner(System.in);
 	
 	static void info(Object obj) {
