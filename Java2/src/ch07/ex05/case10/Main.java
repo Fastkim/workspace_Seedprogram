@@ -17,7 +17,7 @@ public class Main {
 			autobot.fight();
 			//autobot.guard(); // Autobot 타입에는 guard method가 없다.
 			
-			if(autobot instanceof Bumblebee bot) bot.guard(); // autobot instanceof Bumblebee 가 true 이면 bot을 Bumblebee 타입으로 바꿔라.
+			if(autobot instanceof Bumblebee bot) bot.guard(); // autobot instanceof Bumblebee가 true이면 bot을 Bumblebee 타입으로 바꿔라.
 			if(autobot instanceof Prime bot) bot.command();
 		}
 	}

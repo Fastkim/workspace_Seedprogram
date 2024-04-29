@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class MyMap {
 	public static void main(String[] args) {
-		// list와 map은 key와 value가 있다. list : key 자동할당 , map : key 지정할당.
-		Map<Integer, User> map = new HashMap<>(); 
+		// list와 map은 key와 value가 있다. list : key 자동할당, map : key 지정할당
+		Map<Integer, User> map = new HashMap<>();
 		
 		map.put(1, new User("최한석"));
 		map.put(2, new User("한아름"));
