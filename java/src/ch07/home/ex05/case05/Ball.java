@@ -1,4 +1,6 @@
-package ch07.ex04.case03;
+package ch07.home.ex05.case05;
+
+import java.util.ArrayList;
 
 public class Ball {
 	private int ballNum;
@@ -7,13 +9,8 @@ public class Ball {
 		this.ballNum = ballNum;
 	}
 	
-	public int getBallNum() {
-		return ballNum;
-	}
-	
 	@Override
 	public String toString() {
 		return this.ballNum + " ";
 	}
-
 }

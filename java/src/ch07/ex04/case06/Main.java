@@ -10,5 +10,13 @@ public class Main {
 		
 		for(Animal animal: animals)
 			System.out.println(animal);
+		
+		 Object[] objs = new Object[3];
+		 objs[0] = new Cat("헤롱이");
+		 objs[1] = new Dog("왈왈이");
+		 objs[2] = new Dog("성큼이");
+		 
+		 for(Object obj: objs)
+			 System.out.println(obj);
 	}
 }
