@@ -4,20 +4,20 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+
 // 나만의 Annotation(@) 만들기.
 
-
 // interface -> lambda(@FunctionalInterface) 확장.
-// interface -> @annotation으로 확장
+// interface -> @annotation으로 확장.
 
-@Retention(RetentionPolicy.SOURCE) // 소스코드상에만 있고 compile될때에는 읽지 않도록 설정하는것.
-@Target(ElementType.TYPE) // Target : 내가 만드는 annotation을 어느 멤버(클래스,메서드,variable)에 사용할지 설정.
-public @interface Type { // annotation의 이름을 Type으로 만들어준거다. @Type 
+@Retention(RetentionPolicy.SOURCE) // .SOURCE : 소스코드인 구간에만 유지되고 클래스 파일이 되는 컴파일 과정에서 애노테이션 정보는 사라진다.
+@Target(ElementType.TYPE)  // .TYPE: 탑입으로 사용  Target : 내가 만드는 annotation을 어느 멤버(클래스,메서드,variable)에 사용할지 설정.
+public @interface Type { // annotation의 이름을 Type으로 만들어준것이다. @Type
 	String name();
 	int value(); // field를 추상메서드 형태로 쓴다.
 }
 
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.CLASS) // .CLASS : 클래스 파일이 되는 컴파일과정까지 정보가 유지된다.
 @Target(ElementType.FIELD)
 @interface Field {
 	int value();
@@ -25,11 +25,11 @@ public @interface Type { // annotation의 이름을 Type으로 만들어준거�
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.CONSTRUCTOR)
-@interface Constructor {
+@interface Constructor { // 생성자 annotation
 	int value() default 0;
 }
 
-// @Retention 지정하지않으면 RUNTIME이 기본값
+// @Retention 지정하지 않으면 RUNTIME이 기본값
 @Target(ElementType.METHOD)
 @interface Method {
 	
@@ -55,4 +55,3 @@ public @interface Type { // annotation의 이름을 Type으로 만들어준거�
 @interface Universal {
 	
 }
-
