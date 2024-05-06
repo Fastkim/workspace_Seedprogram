@@ -15,7 +15,7 @@ public class C02Executor { // Runnable 타입으로 thread를 실행시켜보자
 				System.out.print(c + " ");
 		};
 		
-		Executor executor = Executors.newCachedThreadPool(); // pool이라는 단어가 포함되었다면 n개가 모여있다라고 연상
+		Executor executor = Executors.newCachedThreadPool(); // pool이라는 단어가 포함되어있다면 n개가 모여있다라고 연상
 		executor.execute(r1); // thread r1 작동
 		executor.execute(r2); // thread r2 작동
 	}

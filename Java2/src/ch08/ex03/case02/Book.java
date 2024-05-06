@@ -25,4 +25,5 @@ public class Book { // record 타입을 컴파일했을때를 javac를 따라해
 	public String title() {return null;}
 	public int price() {return 0;}
 	public LocalDate printedDate() {return null;}
+
 }

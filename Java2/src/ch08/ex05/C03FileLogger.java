@@ -20,7 +20,7 @@ public class C03FileLogger {
 		logger.severe("예외가 발생했습니다.");
 		logger.info("로깅을 끝냅니다.");
 		
-		handler.flush(); // handler 객체가 가지고있는 로그를 파일에 쏟아내자 : flush()
+		handler.flush(); // flush() : handler 객체가 가지고있는 로그를 파일에 쏟아내자.
 		handler.close();
 	}
 	
