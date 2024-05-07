@@ -8,7 +8,7 @@ public class C02Char {
 		c = 65; // 유니코드
 		System.out.printf("%c, %s\n", c, Integer.toBinaryString(c));
 		
-		c = 0x0041; // 0041 : 16진수 , 16진수표현은 앞에 0x
+		c = 0x0041; // 0041 : 16진수, 16진수표현은 앞에 0x
 		System.out.printf("%c, %s\n", c, Integer.toBinaryString(c));
 		
 		c = '\u0041'; // unicode 형태

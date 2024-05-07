@@ -10,7 +10,7 @@ public class C02Output {
 		
 		System.out.print(200); // api : 공개된 library를 의미한다.
 		System.out.print(300); // print : 줄바꿈이 없음.
-		System.out.print('\n'); // single quotation : '' = char , double quotation : "" = string
+		System.out.print('\n'); // \n : 줄바꿈, single quotation : '' = char , double quotation : "" = string
 		System.out.print(400);
 		System.out.println(); // 한줄 띄우기
 		

@@ -4,7 +4,7 @@ public class C04String {
 	public static void main(String[] args) {
 		String s = "|" + " a happy ".trim() + "|"; // trim : 공백제거 api
 		s = s.concat(" dog");
-		s = s.substring(2); // index 부터 출력
+		s = s.substring(2); // (index)부터 출력
 		System.out.println("s:" + s);
 		
 		s = "hello";
@@ -16,15 +16,13 @@ public class C04String {
 		i = "b".compareTo("a"); // unicode 값을 서로 비교해서 값의 차이를 return
 		i = "a".compareTo("b");
 		i = "A".compareTo("a");
-		i = "A".compareToIgnoreCase("a"); // physical하게 대소문자 구분없이 비교
+		i = "A".compareToIgnoreCase("a"); // phsical하게 대소문자 구분없이 비교
 		i = s.indexOf("l"); // "l" 문자를 첫번째로 가지고있는 index를 return
-		i = s.lastIndexOf("l"); // "l" 문자를 마지막으로 가지고있는 index를 return
-		i = s.length();
 		System.out.println("i: " + i);
 		
 		s = "develop";
-		boolean b = s.startsWith("de"); // 문자열이 "de"로 시작하는지 물어보는 api 
-		b = s.endsWith("lop"); 
+		boolean b = s.startsWith("de"); // 문자열이 "de"로 시작하는지 물어보는 api
+		b = s.endsWith("lop");
 		b = s.equals("develop");
 		b = s.equalsIgnoreCase("Develop"); // 대소문자 구분없이 같은지
 		b = "".isEmpty();
