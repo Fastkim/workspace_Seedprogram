@@ -31,7 +31,6 @@ public interface Console { // utility interface : 업무와 관련이 없는것�
 		Boolean scoreRight = false;
 		String input = "";
 		do {
-			scoreRight = false;
 			System.out.print(subjectName + "\n> ");
 			input = sc.nextLine().trim();
 			scoreRight = input.matches("^[0-9][0-9]?"); // 점수가 0점이 나올수도 있어요.. 놀랍지만
