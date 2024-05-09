@@ -1,35 +1,52 @@
 package com.my.hr.dao;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.my.hr.domain.Laborer;
 
 public class LaborerDaoImpl implements LaborerDao {
-	private Laborer[] laborers;
+	private List<Laborer> laborers;
 	private int row;
+	public static int lastIndex = 0;
 	
-	public LaborerDaoImpl(Laborer[] laborers) {
-		this.laborers = laborers;
+	public LaborerDaoImpl(List<Laborer> laborer) {
+		this.laborers = laborer;
 	}
 	
 	
 	@Override
 	public void insertLaborer(Laborer laborer) {
-		this.laborers[row++] = laborer;
-		laborer.setLaborerId(Laborer.lastIndex++);
+		this.laborers.add(laborer);
+		laborer.setLaborerId(++lastIndex);
 	}
 	
 	@Override
-	public Laborer[] selectLaborers() {
+	public List<Laborer> selectLaborers() {
 		return this.laborers;
 	}
 	
 	@Override
 	public void updateLaborer(int laborerId, String laborerName, String startDate) {
-		this.laborers[laborerId].setLaborerName(laborerName);
-		this.laborers[laborerId].setStartDate(startDate);
+		laborers.stream().filter(laborer -> laborer.getLaborerId() == laborerId)
+		.collect(Collectors.toList())
+		.forEach(laborer -> {
+			laborer.setLaborerName(laborerName);
+			laborer.setStartDate(startDate);
+		});
+		
+//		this.laborers.get(laborerId).setLaborerName(laborerName);
+//		this.laborers.get(laborerId).setStartDate(startDate);
 	}
 	
 	@Override
 	public void deleteLaborer(int laborerId) {
-		this.laborers[laborerId] = null;
+		laborers.stream().filter(laborer -> laborer.getLaborerId() == laborerId)
+		.collect(Collectors.toList()).forEach(laborer -> 
+		{
+			laborers.remove(laborer);
+		});
+		
+		
 	}
 }

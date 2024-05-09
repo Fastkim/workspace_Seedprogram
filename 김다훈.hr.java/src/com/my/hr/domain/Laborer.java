@@ -1,10 +1,13 @@
 package com.my.hr.domain;
 
+import java.util.ArrayList;
+
 public class Laborer {
 	private int laborerId;
 	private String laborerName;
 	private String startDate;
-	public static int lastIndex = 1;
+	
+	
 	
 	public Laborer(String laborerName, String startDate) {
 		this.laborerName = laborerName;
@@ -13,6 +16,10 @@ public class Laborer {
 	
 	public void setLaborerId(int laborerId) {
 		this.laborerId = laborerId;
+	}
+	
+	public int getLaborerId() {
+		return this.laborerId;
 	}
 	
 	public String getLaborerName() {
