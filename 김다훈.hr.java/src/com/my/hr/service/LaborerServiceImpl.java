@@ -1,7 +1,6 @@
 package com.my.hr.service;
 
 import java.util.List;
-
 import com.my.hr.dao.LaborerDao;
 import com.my.hr.domain.Laborer;
 
@@ -12,7 +11,6 @@ public class LaborerServiceImpl implements LaborerService {
 	
 	public LaborerServiceImpl(LaborerDao laborerDao) {
 		this.laborerDao = laborerDao;
-		
 	}
 	
 	@Override

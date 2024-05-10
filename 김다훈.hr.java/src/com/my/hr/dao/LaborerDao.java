@@ -1,7 +1,6 @@
 package com.my.hr.dao;
 
 import java.util.List;
-
 import com.my.hr.domain.Laborer;
 
 public interface LaborerDao {

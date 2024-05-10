@@ -23,10 +23,8 @@ public interface Console {
 			isGood = input.matches("[0a-bA-B가-힣]+") && (input.length() <= 5);
 			if(!isGood) Console.err("5자 이하의 문자가 아닙니다.");
 		} while(!isGood);
-		
 		return input;
 	}
-	
 	
 	public static String inDate(String msg) {
 		String input = "";
@@ -38,33 +36,32 @@ public interface Console {
 			isGood = input.matches("^[\\d]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$");
 			if(!isGood) Console.err("날짜 형식(YYYY-MM-DD)이 아닙니다.");
 		} while(!isGood);
-		
 		return input;
 	}
 	
 	static int inNum(String msg) {
 		String input = "";
 		Boolean isGood = false;
+		
 		do {
 			Console.inMsg(msg);
 			input = sc.nextLine().trim();
 			isGood = input.matches("^[0-4]$");
 			if(!isGood) Console.err("번호를 다시 입력해주세요.\n");
 		} while(!isGood);
-		
 		return Integer.parseInt(input);
 	}
 	
 	static int indexNum(String msg) {
 		String input = "";
 		Boolean isGood = false;
+		
 		do {
 			Console.inMsg(msg);
 			input = sc.nextLine().trim();
 			isGood = input.matches("^[0-9]+");
 			if(!isGood) Console.err("번호를 다시 입력해주세요.\n");
 		} while(!isGood);
-		
 		return Integer.parseInt(input);
 	}
 	

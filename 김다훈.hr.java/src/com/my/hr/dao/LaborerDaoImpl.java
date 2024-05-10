@@ -2,7 +2,6 @@ package com.my.hr.dao;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 import com.my.hr.domain.Laborer;
 
 public class LaborerDaoImpl implements LaborerDao {
@@ -13,7 +12,6 @@ public class LaborerDaoImpl implements LaborerDao {
 	public LaborerDaoImpl(List<Laborer> laborer) {
 		this.laborers = laborer;
 	}
-	
 	
 	@Override
 	public void insertLaborer(Laborer laborer) {
@@ -34,19 +32,11 @@ public class LaborerDaoImpl implements LaborerDao {
 			laborer.setLaborerName(laborerName);
 			laborer.setStartDate(startDate);
 		});
-		
-//		this.laborers.get(laborerId).setLaborerName(laborerName);
-//		this.laborers.get(laborerId).setStartDate(startDate);
 	}
 	
 	@Override
 	public void deleteLaborer(int laborerId) {
 		laborers.stream().filter(laborer -> laborer.getLaborerId() == laborerId)
-		.collect(Collectors.toList()).forEach(laborer -> 
-		{
-			laborers.remove(laborer);
-		});
-		
-		
+		.collect(Collectors.toList()).forEach(laborer -> laborers.remove(laborer));
 	}
 }

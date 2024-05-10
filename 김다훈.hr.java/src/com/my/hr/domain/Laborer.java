@@ -1,13 +1,9 @@
 package com.my.hr.domain;
 
-import java.util.ArrayList;
-
 public class Laborer {
 	private int laborerId;
 	private String laborerName;
 	private String startDate;
-	
-	
 	
 	public Laborer(String laborerName, String startDate) {
 		this.laborerName = laborerName;
@@ -43,5 +39,4 @@ public class Laborer {
 		return String.format("%5d %8s %9s", 
 				 laborerId, laborerName, startDate);
 	}
-	
 }
