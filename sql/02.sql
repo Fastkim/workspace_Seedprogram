@@ -13,9 +13,10 @@ where last_name = 'Whalen';
 
 select employee_id, last_name, hire_date
 from employees
-where hire_date = '2008/02/06'; -- hire_date의 타입이 date이므로 oracle이 char타입을 date타입으로 알아서 바꿔준다.
--- 캐릭터타입을 날짜타입을 oracle이 parsing할때 어떤형식일지 설정하는방법 아래.
--- 도구 - 환경설정 - database - NLS - DATE FORMAT 설정
+where hire_date = '2008/02/06'; 
+-- hire_date의 타입이 date이므로 oracle이 캐릭터타입을 date타입으로 auto-casting한다.
+-- 캐릭터타입을 날짜타입으로 oracle이 parsing할때 어떤형식으로 읽을지 설정하는방법은 아래.
+-- 도구 -> 환경설정 -> database -> NLS -> DATE FORMAT 설정.
 
 select last_name, salary
 from employees
@@ -28,7 +29,7 @@ where salary >= 12000;
 
 select last_name, job_id
 from employees
-where job_id != 'IT_PROG';
+where job_id != 'IT_PROG'; -- != 같지않다.
 
 select last_name, salary
 from employees
@@ -97,11 +98,11 @@ from employees;
 
 select last_name, job_id
 from employees
-where job_id like 'I_\_%' escape '\'; -- \(백슬레시) : escape 문자
+where job_id like 'I_\_%' escape '\'; -- \(백슬레시) : escape 문자, 특수문자앞에 써서 일반문자로 만들어줌.
 
 select last_name, job_id
 from employees
-where job_id like 'I_{_%' escape '{'; -- escape로 등록해서 사용가능
+where job_id like 'I_{_%' escape '{'; -- 어떤 문자이던지 escape로 등록해서 사용가능
 
 -- 과제: 직업에 _R이 포함된 사원들의 이름, 직업을 조회하라.
 select last_name, job_id
@@ -110,7 +111,7 @@ where job_id like '%\_R%' escape '\';
 
 select employee_id, last_name, manager_id
 from employees
-where manager_id = null; -- expression에 null이 포함되면 null을 return한다.
+where manager_id = null; -- expression(=,+,-,*,/)에 null이 포함되면 null을 return한다.
 
 select employee_id, last_name, manager_id
 from employees

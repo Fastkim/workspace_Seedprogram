@@ -17,7 +17,7 @@ desc employees;
 select last_name, salary
 from employees;
 
-select last_name, salary + 300 --expreesion(표현식), column name을 variable처럼 쓰고있다. 300(constant)
+select last_name, salary + 300 --expression(표현식), column name을 variable처럼 쓰고있다. 300(constant)
 from employees;
 
 -- 과제: 사원들의 월급, 연봉을 조회하라.
@@ -40,7 +40,7 @@ select last_name "Name", salary * 12 "Annual Salary"
 from employees;
 
 -- 과제: 사원들의 사번, 이름, 직업, 입사일(STARTDATE)을 조회하라.
-select employee_id, CONCAT(first_name, last_name), job_ID, hire_date STARTDATE
+select employee_id, CONCAT(first_name, last_name), job_id, hire_date STARTDATE
 from employees;
 
 -- 과제: 사원들의 사번(Emp #), 이름(Name), 직업(Job), 입사일(Hire Date)를 조회하라.
