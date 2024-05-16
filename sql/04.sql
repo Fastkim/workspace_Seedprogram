@@ -251,3 +251,10 @@ order by case day
     when 'saturday' then 6
     when 'sunday' then 7
 end;
+
+select last_name, hire_date,
+    case when hire_date <= '2005/12/31' then '100만원'
+    else '10만원' end gift
+from employees
+order by gift, hire_date;
+
