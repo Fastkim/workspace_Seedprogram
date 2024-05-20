@@ -1,5 +1,5 @@
 --hr user
-drop table hire_dates; -- 복습을 위한 코드
+drop table hire_dates;
 
 create table hire_dates(
 emp_id number(8), -- emp_id default값은 명시되지않았으므로 null
@@ -13,7 +13,7 @@ from tab; -- hr스키마(테이블의 집합)에 있는 테이블을 보여준�
 -- delete table 했을때 쓰레기통에 BIN%이름으로 저장되고 commit했을때 적용된다.
 select tname
 from tab
-where tname not like 'BIN%';
+where tname not like 'BIN%'; -- 쓰레기 빼고 테이블이름 보여주기.
 
 -- DDL(Data Definition Language) : 객체를 정의하는 언어
 
@@ -33,7 +33,6 @@ from hire_dates;
 -- system user로 DB에 접속
 create user you identified by you; -- you라는 이름의 유저계정 생성 비밀번호도 you
 -- role
-grant connect, resource to you; -- create session 은 connect와 resource에 있다.
+grant connect, resource to you; -- create session은 connect와 resource에 있다.
 
 -- you user
-
