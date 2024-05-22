@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN' 
+	'http://mybatis.org/dtd/mybatis-3-mapper.dtd'> <!-- 루트 이름 -->
+<mapper namespace='ch05.ex02.Map'>
+	<select id='selectUser' resultMap='userMap'>
+		<bind name='title' value='"%" + post.title + "%"'/> <!-- bind는 변수를 나타내는 태그 -->
+		<bind name='content' value='"%" + post.content + "%"'/> <!--  bind를 사용할때 접두사(post)가 null이 아니여야된다가 전제되어야한다. -->
+		select users.user_id, user_name, reg_date, post_title, post_content
+		from users join posts
+		on users.user_id = posts.user_id
+		where user_name = #{userName}
+		<choose>
+			<when test='post != null and post.title != null'> <!-- when은 배타적이다. test에서 true가 나오면 내용을 실행 false면 버린다. --> 
+				and posts.post_title like #{title} <!-- 코드 6줄에 있는 title 변수를 사용한것 -->
+			</when>
+			<when test='post != null and post.content != null'>
+				and posts.post_content like #{content}
+			</when>
+			<otherwise>
+				and posts.user_id is not null
+			</otherwise>
+		</choose>
+	</select>
+	
+	<resultMap id='userMap' type='ch05.domain.User'>
+		<id property='userId' column='user_id'/>
+		<result property='userName' column='user_name'/>
+		<result property='regDate' column='reg_date'/>
+		<collection property='posts' ofType='ch05.domain.Post' columnPrefix='post_'> <!--  columnPrefix : 공통으로 붙일 접두사 명시 -->
+			<result property='title' column='title'/> <!--  column = post_title -->
+			<result property='content' column='content'/>
+		</collection>
+	</resultMap>
+</mapper>
+
+<!-- mybatis : persistence Framework, sql mapping Framework, OR mapping Framework 
+	 hibernate : sql 요청도 스스로 하는 프레임워크-->

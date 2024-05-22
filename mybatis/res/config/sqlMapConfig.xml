@@ -3,9 +3,17 @@
  <!DOCTYPE configuration PUBLIC './/mybatis.org/DTD config 3.0//EN'
  	'http://mybatis.org/dtd/mybatis-3-config.dtd'>
 <configuration> <!-- 루트 태그 -->
-	<properties resource='config/jdbc.properties'>  <!-- xml에서는 패키지구분을 /로 함 --> 
+	 <properties resource='config/jdbc.properties'>  <!--  xml에서는 패키지구분을 /로 함 -->
 		<property name='driver' value='oracle.jdbc.driver.OracleDriver'/>
 	</properties>
+
+
+	<!--  <properties resource='config/hr.properties'/> -->
+
+	<settings>
+		<setting name='cacheEnabled' value='false'/> <!--  or Mapping을 늘 새롭게 생성해서 한다, 재활용을 안하도록 설정 -->
+		<setting name='localCacheScope' value='STATEMENT'/>
+	</settings>
 	
 	<typeAliases> <!-- 긴 클래스명()에 별명 붙여줄수있음 -->
 		<typeAlias type='ch02.domain.User' alias='user'/>
@@ -17,9 +25,18 @@
 			<transactionManager type='JDBC'/>
 			<dataSource type='POOLED'> <!-- POOLED : connection을 n개를 미리 만들고 돌아가면서 씀, 즉 접속할때의 대기시간을 줄일수있음 -->
 				<property name='driver' value='${driver}'/> <!-- expression language(el) , ${driver} : oracle.jdbc.driver.OracleDriver -->
-				<property name='url' value='${url}'/>
+				<property name='url' value='${url}'/> 
 				<property name='username' value='${username}'/>
 				<property name='password' value='${password}'/>
+			</dataSource>
+		</environment>
+		<environment id='hr'>
+			<transactionManager type='JDBC'/>
+			<dataSource type='POOLED'>
+				<property name='driver' value='${driver}'/>
+				<property name='url' value='${url}'/> <!--   -->
+				<property name='username' value='hr'/> <!--  변수사용해도 되고 하드코딩해도됨. -->
+				<property name='password' value='hr'/>
 			</dataSource>
 		</environment>
 	</environments>
@@ -35,5 +52,17 @@
 		<mapper resource='ch04/ex01/sqlMap.xml'/>
 		<mapper resource='ch04/ex02/sqlMap.xml'/>
 		<mapper resource='ch05/ex01/sqlMap.xml'/>
+		<mapper resource='ch05/ex02/sqlMap.xml'/>
+		<mapper resource='ch05/ex03/sqlMap.xml'/>
+		<mapper resource='ch05/ex04/sqlMap.xml'/>
+		<mapper resource='ch05/ex05/sqlMap.xml'/>
+		<mapper resource='ch05/ex06/sqlMap.xml'/>
+		<mapper resource='ch05/ex07/sqlMap.xml'/>
+		<mapper resource='ch06/dao/map/employeeMap.xml'/>
+		<mapper class='ch07.ex01.Map'/>
+		<mapper class='ch07.ex02.Map'/>
+		<mapper class='ch07.ex03.Map'/>
+		<mapper class='ch07.ex04.Map'/>
+		<mapper class='ch07.ex05.Map'/>
 	</mappers>
 </configuration>
