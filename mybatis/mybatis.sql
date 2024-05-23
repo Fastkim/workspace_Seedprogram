@@ -4,6 +4,13 @@ drop user mybatis cascade; -- 복습을 위한 코드
 -- 과제: mybatis/mybatis 인 user 를 만들어라.
 create user mybatis identified by mybatis default tablespace users; -- system user와 다른저장공간을 사용(포트폴리오때도 사용)
 -- role 부여
+-- *CONNECT
+-- 기본적으로 DB에 접속할 수 있는 권한으로
+-- CREATE SESSION 이 들어았다.
+-- *RESOURCE
+--  DB의 테이블이나 뷰 등을 생성하고 삭제, 변경할 수 있고, 
+-- 프로시져나 트리거와 같은 PL/SQL을 사용할 수 있는 권한이다.
+
 grant connect, resource to mybatis;
 -- DCL(Data Control Language)
 
