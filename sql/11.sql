@@ -97,8 +97,7 @@ select team_teamid_seq.currval from dual; -- currval : 현재값
 insert into teams
 values(team_teamid_seq.nextval, 'Marketing');
 
-select * from teams
-where team_id = 3;
+select * from teams;
 
 create sequence x_xid_seq -- 반복문
     start with 10 -- 시작값

@@ -9,6 +9,4 @@ laborer_id number(2) constraint laborers_laborerid_pk primary key,
 laborer_name varchar2(12),
 hire_date date);
 
-create sequence laborers_laborerid_seq
-
-commit;
+create sequence hr2.laborers_laborerid_seq;

@@ -13,8 +13,8 @@
 		<typeAlias type='com.my.hr.domain.Laborer' alias='laborer'/>
 	</typeAliases>
 	
-	<environments default='development'>
-		<environment id='hr'>
+	<environments default='hr2'>
+		<environment id='hr2'>
 			<transactionManager type='JDBC'/>
 			<dataSource type='POOLED'>
 				<property name='driver' value='${driver}'/>

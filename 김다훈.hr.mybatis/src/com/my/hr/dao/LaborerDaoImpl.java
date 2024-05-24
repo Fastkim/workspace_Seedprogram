@@ -1,9 +1,7 @@
 package com.my.hr.dao;
 
 import java.time.LocalDate;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.my.hr.dao.map.LaborerMap;
 import com.my.hr.domain.Laborer;
