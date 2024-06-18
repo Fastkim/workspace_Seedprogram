@@ -21,7 +21,7 @@
 
                 if(!field.length) errMsg = '노동자를 선택하세요.'
                 else {
-                    if(!field.val()) errMsg = field.attr('$placeholder') + '입력하세요.'
+                    if(!field.val()) errMsg = field.attr('placeholder') + '입력하세요.'
                     else isGood = true
                 }
 
@@ -35,20 +35,21 @@
             }
 
             function listLaborers() {
-                $('input').not(':radio').val('')
+                $('input').not(':radio').val('') // radio가 아닌걸 찾아낸후 emptyString 처리해서 처리해준다.
                 $('#laborers').empty()
 
                 if(laborers.length) {
                     const laborerArr = [] // buffer : 데이터가 잠시머무르는 공간
                     
                     $.each(laborers, (i, laborer) => {
-                        laborerArr.unshift()
+                        laborerArr.unshift(
                             `<tr>
                                 <td><input type='radio' value='${laborer.laborerId}' id='laborerId' name='laborerId'/></td>
                                 <td>${laborer.laborerId}</td>
                                 <td>${laborer.laborerName}</td>
                                 <td>${laborer.hireDate}</td>
                             </tr>`
+                        )
                     })
 
                     $('#laborers').append(laborerArr.join(''))
@@ -73,12 +74,12 @@
                 // 노동자 수정
                 $('#fixLaborerBtn').click(() => {
                     if(isVal($('#laborerId:checked')) && isVal($('#laborerName')) && isVal($('#hireDate'))) {
-                            let laborerId = $('#laborerid:checked').val()
+                            let laborerId = $('#laborerId:checked').val()
 
                             let laborer = laborers.filter(laborer =>
                                 laborer.laborerId == laborerId)[0]
 
-                            if(laborer) {
+                            if(laborer) { // 수정할 노동자가 있다면
                                 laborer.laborerName = $('#laborerName').val()
                                 laborer.hireDate = $('#hireDate').val()
                                 listLaborers()
@@ -86,12 +87,12 @@
                         }
                 })
 
-                $('#laborers').on({
+                $('#laborers').on({ // .on : 해당객체의 자식들중에
                     change() {
                         $('#laborerName').val($(this).parent().next().next().text())
                         $('#hireDate').val($(this).parent().next().next().next().text())
                     }
-                }, '#laborerId')
+                }, '#laborerId') // 자식들중에 laborerId를 가진.
 
                 // 노동자 삭제
                 $('#delLaborerBtn').click(() => {
