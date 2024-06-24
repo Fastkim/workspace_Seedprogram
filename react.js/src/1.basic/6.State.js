@@ -1,10 +1,11 @@
 // react API ==> hook ==> 메소드 이름이 use로 시작된다.
+// component가 갖고있는 데이터: state
 import {useState} from 'react'
 
 export default function State() {
     const [cnt, setCnt] = useState(0)
 
-    function onClick() {
+    function onClick() { //handler
         setCnt(cnt + 1)
     }
 

@@ -1,8 +1,11 @@
-import State from './/6.State'
+import UserPanel from './8.UserPanel'
 
 export default function App() {
     return (
-        <State/> // react component button
+        <>
+            <h3>user</h3>
+            <UserPanel/>
+        </> // react component button
     )
 }
 
