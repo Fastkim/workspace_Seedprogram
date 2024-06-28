@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: sans-serif; /* sans-serif: 삐침없고 굵기가 일정한 고딕 계열의 글꼴 */
     margin: 1.3rem;
     padding: 0;
 }

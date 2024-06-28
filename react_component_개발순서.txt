@@ -14,3 +14,8 @@ state의 2가지 조건
 3. 원천데이터는 state일만하다. ex) 1(state)+ 2(state) = 3(x)
 
 원래는 모듈(기능)별로 component 파일을 따로 만든다.
+
+component가 소유(데이터가 바뀔때마다 새롭게 태어남)하는 데이터는 state (ex:심장)
+component가 외부로부터 받는 데이터는 property (ex:스마트폰)
+
+property는 부모 -> 자식으로 흐른다.
