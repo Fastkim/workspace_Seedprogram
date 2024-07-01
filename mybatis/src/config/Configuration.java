@@ -1,6 +1,5 @@
 package config;
 
-import java.io.InputStream;
 import java.io.Reader;
 
 import org.apache.ibatis.io.Resources;
