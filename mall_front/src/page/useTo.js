@@ -38,7 +38,12 @@ const useTo = () => {
         search: queryDefault //todo/get/13?page=3&size , queryDefault는 최신으로 계속 갱신됨
     })
 
-    return {toList, toGet, page, size, refresh}
+    const toFix = num => navigate({
+        pathname: `../fix/${num}`,
+        search: queryDefault
+    })
+
+    return {toList, toGet, toFix, page, size, refresh}
 }
 
 export default useTo

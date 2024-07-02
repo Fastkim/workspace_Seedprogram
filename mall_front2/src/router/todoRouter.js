@@ -16,7 +16,7 @@ const todoRouter = () => {
             element: <Navigate replace to='list'/>
         },
         {
-            path: 'get/:todoNo',
+            path: 'todoNo',
             element: <Suspense fallback={Loading}><TodoGet/></Suspense>
         }
     ]

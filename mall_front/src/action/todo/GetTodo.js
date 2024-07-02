@@ -1,8 +1,10 @@
 import {useEffect, useState} from 'react'
-import {getTodo} from '../../api/todoApi'
+import {getTodo, delTodo} from '../../api/todoApi'
 import useTo from '../../page/useTo'
+import DelModal from '../DelModal'
 
 const GetTodo = ({todoNo}) => {
+    const [del, setDel] = useState(false)
     const {toList, page, size} = useTo()
     const [todo, setTodo] = useState({
         todoNo: 0,
@@ -16,8 +18,16 @@ const GetTodo = ({todoNo}) => {
         getTodo(todoNo).then(todo => setTodo(todo))
     }, [todoNo])
 
+    const onClickDel = () => setDel(true)
+    const deleteTodo = () => {
+        delTodo(todoNo)
+        toList()
+    }
+    const close = () => setDel(false)
+
     return (
         <div className='border-2 border-sky-200 mt-10 m-2 p-4'>
+            {del ? <DelModal close={close} del={deleteTodo}/> : <></>}
             {makeItem('번호', todo.todoNo)}
             {makeItem('작성자', todo.writer)}
             {makeItem('제목', todo.title)}
@@ -25,8 +35,15 @@ const GetTodo = ({todoNo}) => {
             {makeItem('완료', todo.done ? 'Y' : 'N')}
             <div className='flex justify-end p-4'>
                 <button type='button'
+                    className='rounded p-4 m-2 text-xl w-32 text-white bg-green-500'
+                    onClick={() => TodoFix(todoNo)}>FIX</button>
+                <button type='button'
+                    className='rounded p-4 m-2 text-xl w-32 text-white bg-red-500'
+                    onClick={onClickEdl}>DELETE</button>
+                <button type='button'
                     className='rouned p-4 m-2 text-xl w-32 text-white bg-blue-500'
                     onClick={() => toList({page, size})}>LIST</button>
+                
             </div>
         </div>
     )
