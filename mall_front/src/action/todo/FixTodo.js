@@ -40,14 +40,14 @@ const FixTodo = ({todoNo}) => {
                         <div className='w-1/5 p-6 text-rightf font-bold'>번호</div>
                         <div className='w-4/5 p-6 rounded-r border border-solid
                             shadow-md bg-gray-100'>{todo.todoNo}</div>
-                    </div>                                                                                  '
+                    </div>
                 </div>
                 <div className='flex justify-center mt-10'>
                     <div className='relative mb-4 w-full flex flex-wrap items-stretch'>
                         <div className='w-1/5 p-6 text-rightf font-bold'>작성자</div>
                         <div className='w-4/5 p-6 rounded-r border border-solid
                             shadow-md bg-gray-100'>{todo.writer}</div>
-                    </div>                                                                                  '
+                    </div>
                 </div>
                 <div className='flex justify-center'>
                     <div className='relative mb-4 w-full flex flex-wrap items-stretch'>
