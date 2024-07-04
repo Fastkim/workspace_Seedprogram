@@ -55,7 +55,7 @@ const GetTodo = ({todoNo}) => {
 
 const makeItem = (title, value) =>
     <div className='flex justify-center'>
-        <div className='relative mb-4 w-full flect flex-wrap items-stretch'>
+        <div className='relative mb-4 w-full flex flex-wrap items-stretch'>
             <div className='w-1/5 p-6 text-right font-bold'>{title}</div>
             <div className='w-4/5 p-6 rounded border border-solid shadow-md'>{value}</div>
         </div>
