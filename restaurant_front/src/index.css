@@ -71,6 +71,7 @@
 }
 
 .loginBtn, .loginUpBtn {
+    width: 100%;
     border-radius: 3rem;
     background-color: gray;
     color: white;
@@ -94,3 +95,18 @@
     line-height: 0px;
     margin: 0px 16px;
   }
+
+.loginForm {
+    margin-left: 1rem;
+    width: 90%;
+}
+
+.closeBtn {
+    width: 50%;
+}
+
+.kakaoLogo {
+    width: 3rem;
+    height: 3rem;
+    font-size: 0.9rem;
+}

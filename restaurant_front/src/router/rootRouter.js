@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Suspense } from "react";
 import Main from '../page/main';
-import Login from '../page/login';
+import Login from '../page/user/01';
 
 const rootRouter = createBrowserRouter([
     {

@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import {Container, Row, Col, Form, Button} from 'react-bootstrap'
 import {ChevronLeft, Google} from 'react-bootstrap-icons';
 
@@ -20,7 +21,7 @@ const Login = () => {
                 </Col>
             </Row>
             <Row>
-                <Form>
+                <Form className='loginForm'>
                     <Form.Group className="mb-3 mt-3" controlId="formGroupEmail">
                         <Form.Label>ID</Form.Label>
                         <Form.Control type="email" placeholder="아이디를 입력하세요." />
@@ -43,8 +44,12 @@ const Login = () => {
                 </Form>
             </Row>
             <Row className='gap-3 mx-2'>
-                <Button variant='outline-secondary' size='lg' className='loginBtn'>로그인</Button>{' '}
-                <Button variant='outline-secondary' size='lg' className='loginUpBtn'>회원가입</Button>{' '}
+                <Link to={'/'} className=''>
+                    <Button variant='outline-secondary' size='lg' className='loginBtn'>로그인</Button>{' '}
+                </Link>
+                <div>
+                    <Button variant='outline-secondary' size='lg' className='loginUpBtn'>회원가입</Button>{' '}
+                </div>
             </Row>
             <Row className='mt-2'>
                 <div className='hr-sect'>
@@ -52,9 +57,12 @@ const Login = () => {
                 </div>
             </Row>
             <Row className='gap-3 mx-2 my-2 mb-4 '>
-                <Button variant='outline-secondary' size='lg' className='loginBtn d-flex justify-content-center'><Google className='mt-1 me-2'/>Google 계정으로 로그인</Button>{' '}
-                <Button variant='outline-secondary' size='lg' className='loginUpBtn '>Kakao 계정으로 로그인</Button>{' '}
-
+                <div>
+                    <Button variant='outline-secondary' size='lg' className='loginBtn d-flex justify-content-center'><Google className='mt-1 me-2'/>Google 계정으로 로그인</Button>{' '}
+                </div>
+                <div>
+                    <Button variant='outline-secondary' size='lg' className='loginUpBtn d-flex justify-content-center'><div className='kakaoLogo border border-black me-2'>카카오 이미지</div>Kakao 계정으로 로그인</Button>{' '}
+                </div>
             </Row>
         </Container>
     )

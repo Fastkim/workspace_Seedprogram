@@ -28,15 +28,15 @@ const Main = () => {
                                 <Col sm={3}>
                                     <Form.Select aria-label="Default select example">
                                         <option>선택</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <option value="1">전체검색</option>
+                                        <option value="2">음식점이름</option>
+                                        <option value="3">편의성</option>
                                     </Form.Select>
                                 </Col>
                                 <Col>
                                     <Form.Control
                                     type="search"
-                                    placeholder="Search"
+                                    placeholder="검색어 입력"
                                     className="me-2 col-3"
                                     aria-label="Search"
                                     />
@@ -67,9 +67,9 @@ const Main = () => {
                         <div className='border border-dark col p-5 text-center'>지역 이미지</div>
                     </Stack>
                     <Row className='mt-4 text-center'>
-                        <Col>
-                            <Button variant="secondary"><Row><div>더보기</div><ChevronDown/></Row></Button>
-                        </Col>
+                        <div className='d-flex justify-content-center'>
+                            <Button variant="secondary" className='d-flex'><span>더보기</span><ChevronDown className='ms-2 mt-1'/></Button>
+                        </div>
                     </Row>
                     <Row className='mt-4'>
                         <div className='separateLine p-2'></div>
@@ -134,9 +134,9 @@ const Main = () => {
                         </ButtonGroup>
                     </Row>
                     <Row className='mt-4 text-center'>
-                        <Col>
-                            <Button variant="secondary"><Row><span>닫기</span><ChevronUp/></Row></Button>
-                        </Col>
+                        <div className='d-flex justify-content-center'>
+                            <Button variant="secondary" className='d-flex'><span>닫기</span><ChevronUp className='ms-2 mt-1'/></Button>
+                        </div>
                     </Row>
             
             <Row>
