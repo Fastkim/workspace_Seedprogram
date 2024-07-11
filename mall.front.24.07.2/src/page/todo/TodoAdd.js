@@ -1,9 +1,13 @@
+import AddTodo from '../../action/todo/AddTodo'
+
 const TodoAdd = () => {
-    return (
-        <div className='text-3xl font-extrabold'>
-            TodoAdd
-        </div>
-    )
+    const TodoAdd = () => {
+        return (
+            <div className='w-full'>
+                <TodoAdd/>
+            </div>
+        )
+    }
 }
 
 export default TodoAdd

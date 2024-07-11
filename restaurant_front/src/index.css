@@ -1,3 +1,96 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.Container {
+    width: 500px;
+    border-radius: 0.5rem;
+}
+
+.loginContainer {
+    margin-top: 9rem;
+}
+
+.title {
+    text-align: center;
+}
+
+.imageBox {
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.separateLine {
+    background-color: gray;
+}
+
+#footer {
+    background-color: gray;
+    margin-top: 5rem;
+}
+
+#nav {
+    margin-left: 6rem;
+}
+
+#logoImage {
+    text-align: center;
+}
+
+#login {
+    font-size: 2rem;
+}
+
+#list {
+    font-size: 2rem;
+}
+
+.loginText {
+    margin-right: 10.5rem;
+    font-size: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.logo_img {
+    width: 7rem;
+    height: 7rem;
+    line-height: 2.5rem;
+    margin-top: .4rem;
+    border: 0.1rem solid black;
+    margin-left: 12rem; 
+}
+
+.logo_text {
+    margin-top: 2rem;
+}
+
+.loginBtn, .loginUpBtn {
+    border-radius: 3rem;
+    background-color: gray;
+    color: white;
+}
+
+.hr-sect {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.35);
+    font-size: 12px;
+    margin: 8px 0px;
+  }
+
+.hr-sect::before, .hr-sect::after {
+    content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 16px;
+  }

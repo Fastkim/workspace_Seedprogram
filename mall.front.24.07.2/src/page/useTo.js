@@ -35,6 +35,11 @@ const useTo = () => {
         search: queryDefault
     })
 
+    const toFix = num => navigate({
+        pathname: `../fix/${num}`,
+        search: queryDefault
+    })
+
     return {toList, toGet, page, size} // useTo는 객체를 return하는 function 이다.
 }
 

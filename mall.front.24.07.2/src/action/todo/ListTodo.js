@@ -7,11 +7,17 @@ import Paging from '../Paging'
 const ListTodo = () => {
     const {toGet, toList, page, size} = useTo() //useTo가 return하는 객체를 받아온다.
     const [response, setResponse] = useState(null) // response의 초기값 null
-    console.log('ListTodo', response)
+    const [refresh, setRefresh] = useState(false)
+    // console.log('ListTodo', response)
+    /*
+    console.log('')
+    */
 
     useEffect(() => {  //useEffect에 있는 내용은 return을 하고나서 실행하는거고 위에는 return 전에 실행하는것.
-        getTodos({page, size}).then(response => setResponse(response))
-    }, [page, size])
+        getTodos({page, size}).then(response => {
+            setResponse(response)
+            setRefresh(true)
+        })}, [page, refresh])
 
     return (
         <div className='border-2 border-blue-100 mt-100 mr-2 ml-2'>

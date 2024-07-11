@@ -2,7 +2,9 @@ import ListTodo from "../../action/todo/ListTodo"
 
 const TodoList = () => {
     return (
-        <ListTodo/>
+        <div className='w-full'>
+            <ListTodo/>
+        </div>
     )
 }
 
