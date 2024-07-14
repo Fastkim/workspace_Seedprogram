@@ -1,10 +1,11 @@
 import {Link} from 'react-router-dom'
 import {Container, Row, Col, Form, Button} from 'react-bootstrap'
-import {ChevronLeft, Google} from 'react-bootstrap-icons';
+import {ChevronLeft, Google, EyeSlash} from 'react-bootstrap-icons';
+
 
 const Login = () => {
     return (
-        <Container id='Container' className='border border-dark loginContainer'>
+        <Container className='border border-dark loginContainer'>
             <Row className='title mt-4'>
                 <Col>
                     <Row>
@@ -27,7 +28,7 @@ const Login = () => {
                         <Form.Control type="email" placeholder="아이디를 입력하세요." />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupPassword">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label>Password</Form.Label><p className='float-end'><EyeSlash className='me-1'/>숨기기</p>
                         <Form.Control type="password" placeholder="비밀번호를 입력하세요." />
                     </Form.Group>
                     {['checkbox'].map((type) => (
