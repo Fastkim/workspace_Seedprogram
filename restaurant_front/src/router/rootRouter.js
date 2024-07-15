@@ -10,7 +10,6 @@ import QuestionUpdate from "../page/question/04";
 import ReviewUpdate from "../page/review/03";
 import ReviewCreate from "../page/review/04";
 
-
 const rootRouter = createBrowserRouter([
     {
         path: '/',

@@ -9,7 +9,7 @@ const Login = () => {
             <Row className='title mt-4'>
                 <Col>
                     <Row>
-                        <Col className='mt-3 d-flex'>
+                        <Col className='float-start mt-2'>
                             <ChevronLeft/>
                         </Col>
                         <Col className='loginText'>

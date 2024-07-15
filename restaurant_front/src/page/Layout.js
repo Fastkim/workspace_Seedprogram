@@ -5,11 +5,11 @@ const Layout = ({children}) => {
     return (
         <>
             <Header/>
-            <div>
-                <main>
-                    {children}
-                </main>
-            </div>
+                <div>
+                    <main>
+                        {children}
+                    </main>
+                </div>
             <Footer/>
         </>
     )
