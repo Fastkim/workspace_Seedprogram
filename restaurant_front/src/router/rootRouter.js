@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Suspense } from "react";
-import Main from '../page/main';
+import Main from '../page/Main';
 import Login from '../page/user/01';
 import RestaurantList from '../page/restaurant/01';
 import RestaurantFilter from '../page/restaurant/02';
