@@ -2,7 +2,7 @@ import React from 'react';
 import {Row, Col, Form, Button} from 'react-bootstrap';
 import {Diagram3, ChevronDown, ChatDotsFill, ChevronCompactLeft, ChevronCompactRight, Search} from 'react-bootstrap-icons';
 import Table from 'react-bootstrap/Table';
-import Layout from '../Layout';
+import UserLayout from '../UserLayout';
 import {FaDog, FaParking} from "react-icons/fa";
 import {MdOutlineDoorSliding} from "react-icons/md";
 import {CgHomeScreen} from "react-icons/cg";
@@ -10,11 +10,9 @@ import {FaTruckRampBox} from "react-icons/fa6";
 import {FaElevator} from "react-icons/fa6";
 
 
-
-
 const RestaurantList = () => {
     return (
-        <Layout>
+        <UserLayout>
             <Row className='mt-3'>
                 <Form inline >
                     <Row>
@@ -121,7 +119,7 @@ const RestaurantList = () => {
                 </Col>
             </Row>
             <Row>
-                <div className='separateLine p-2'></div>
+                <div className='separateLine p-2 mt-3'></div>
             </Row>
             
             <Row className='mt-3'>
@@ -188,8 +186,22 @@ const RestaurantList = () => {
                     </tbody>
                 </Table>
             </Row>
+            <hr/>
             <Row>
-                <div className='separateLine p-2'></div>
+                <p>편의성(barrier-free)</p>
+            </Row>
+            <Row>
+                <Col>
+                    <Row>
+                        <Col><FaElevator className='me-2 mb-2 fs-5'/>엘레베이터</Col><Col><FaTruckRampBox className='me-2 mb-2 fs-5'/>경사로</Col><Col><CgHomeScreen className='me-2 mb-2 fs-5'/>키오스크</Col>
+                    </Row>
+                    <Row>
+                        <Col><MdOutlineDoorSliding className='me-2 mb-2 fs-5'/>자동문</Col><Col><FaParking className='me-2 mb-2 fs-5'/>주차장</Col><Col className='d-flex px-0'><FaDog className='me-2 mb-2 fs-5'/><div className=''>안내견 동반가능</div></Col>
+                    </Row>
+                </Col>
+            </Row>
+            <Row>
+                <div className='separateLine p-2 mt-3'></div>
             </Row>
             <Row className='mt-4 text-center fs-4'>
                 <div><ChevronCompactLeft className='mb-1'/> 이전 &nbsp; 1  &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; 다음 <ChevronCompactRight className='mb-1'/></div>
@@ -213,7 +225,7 @@ const RestaurantList = () => {
                 <p className='footerNav text-center'>종로점심 | 명동 교자(만두) | 명동칼국수 | 충무로 타코 | 충무로 선술집 | 명동 카페 | </p>
                 <p className='footerNav text-center'>충무로 카페 | 을지로입구 카페 | 종로 카페 | 종로 호프 |</p>
             </Row>
-        </Layout>
+        </UserLayout>
     )
 }
 

@@ -2,20 +2,12 @@ import Header from './Header'
 import Footer from './Footer'
 import { Container } from 'react-bootstrap'
 
-function setScreenSize() {
-    let vh = window.innerHeight * 0.01;
-  
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
-  
-setScreenSize();
-
-const Layout = ({children}) => {
+const UserLayout = ({children}) => {
     return (
         <>
-            <Container className='border border-dark Container wrapper'>
+            <Container className='border border-dark Container'>
                 <Header/>
-                    <div className='contentWrapper'>
+                    <div>
                         <main>
                             {children}
                         </main>
@@ -26,4 +18,4 @@ const Layout = ({children}) => {
     )
 }
 
-export default Layout
+export default UserLayout

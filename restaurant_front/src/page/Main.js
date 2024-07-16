@@ -1,10 +1,10 @@
 import {Form, Button, Row, Col, Stack, ButtonGroup} from 'react-bootstrap'
 import {ChevronDown, ChevronUp} from 'react-bootstrap-icons';
-import Layout from './Layout';
+import UserLayout from './UserLayout';
 
 const Main = () => {
     return (
-            <Layout>
+            <UserLayout>
                 <Row>
                     <Col>
                         <Row className='mt-4'>
@@ -123,7 +123,7 @@ const Main = () => {
                         <Button variant="warning" className='d-flex clBtn'><span>닫기</span><ChevronUp className='ms-2 mt-1'/></Button>
                     </div>
                 </Row>
-            </Layout>
+            </UserLayout>
     )
 }
 

@@ -1,7 +1,7 @@
 import {Container, Row, Col, Navbar, Nav, Form, Button, InputGroup} from 'react-bootstrap'
 import {ArrowUpCircle, Justify} from 'react-bootstrap-icons';
 
-const ReviewCreate = () => {
+const Main = () => {
     return (
         <Container className='border border-dark AdminContainer mt-5'>
             <Row>
@@ -108,4 +108,4 @@ const ReviewCreate = () => {
     )
 }
 
-export default ReviewCreate
+export default Main

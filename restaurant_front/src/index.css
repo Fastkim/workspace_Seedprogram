@@ -1,32 +1,25 @@
-.body {
-    height: 100%;
+#adminContainer {
+    width: 800px;
 }
 
+
 .Container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     width: 500px;
     border-radius: 0.5rem;
 }
 
-.wrapper{  /* display */
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-.contentWrapper{
-    flex: 1;
+.test {
+    position:fixed;
+    right:10px;
+    bottom:30px;
 }
 
-
-.btn {
-    background-color: orange;
-    color: black;
-}
-
-#footer {
+.footer {
     background-color: skyblue;
-    margin-top: 3rem;
-    height: 15rem;
+    margin-top: auto;   
 }
 
 .header {
@@ -34,6 +27,12 @@
     background-color: skyblue;
     
 }
+
+.btn {
+    background-color: orange;
+    color: black;
+}
+
 
 button {
     color: orange;
@@ -151,6 +150,10 @@ button {
     color:black;
 }
 
+.cancelBtn, .saveBtn {
+    width: 6rem;
+}
+
 .footerNavigation {
     margin-top: 1rem;
     margin-left: 3rem;
@@ -224,7 +227,6 @@ button {
     margin-bottom: 0;
 }
 .privacyPolicy {
-    
     font-size: 0.7rem;
 }
 
@@ -236,5 +238,28 @@ button {
 }
 
 .bannerText {
-    margin-top: 6rem;
+    margin-top: 4rem;
+}
+
+.foodImage {
+    height: 12rem;
+}
+
+pre {
+     padding:10px; 
+     overflow: auto; 
+     white-space: pre-wrap; /* pre tag내에 word wrap */
+}
+
+.restaurantBottomFixBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 500px;
+    bottom: 0;
+}
+
+.gearIcon {
+    font-size: 7rem;
 }

@@ -1,11 +1,11 @@
 import {Container, Row} from 'react-bootstrap'
-import Layout from '../Layout'
+import UserLayout from '../UserLayout'
 
 
 const TermsOfService = () => {
     return (
         <Container className='border border-dark Container'>
-            <Layout>
+            <UserLayout>
                 <Row className='mt-3'>
                     <pre className='termsText'>
                         비프리 이용약관 환영합니다!<br/><br/>
@@ -40,7 +40,7 @@ const TermsOfService = () => {
                         용약관은 XXXX년 XX월 XX일부터 시행됩니다.             
                     </pre>
                 </Row>
-            </Layout>
+            </UserLayout>
         </Container>
     )
 }

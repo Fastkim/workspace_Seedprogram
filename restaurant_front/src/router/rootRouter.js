@@ -8,8 +8,11 @@ import RestaurantFilter from '../page/restaurant/03';
 import TermsOfService from '../page/term/01';
 import PrivacyPolicy from "../page/term/02";
 import QuestionUpdate from "../page/question/04";
-import ReviewUpdate from "../page/review/03";
-import ReviewCreate from "../page/review/04";
+import ReviewCreate from "../page/review/03";
+import ReviewUpdate from "../page/review/04";
+import AdminMain from '../page/admin/Main'
+import AdminTop from "../page/admin/AdminTop";
+import SideBar from "../page/admin/SideBar";
 
 const rootRouter = createBrowserRouter([
     {
@@ -51,7 +54,20 @@ const rootRouter = createBrowserRouter([
     {
         path: '/reviewCreate',
         element: <Suspense><ReviewCreate/></Suspense>
+    },
+    {
+        path: '/adminMain',
+        element: <Suspense><AdminMain/></Suspense>
+    },
+    {
+        path: '/adminTop',
+        element: <Suspense><AdminTop/></Suspense>
+    },
+    {
+        path: '/sideBar',
+        element: <Suspense><SideBar/></Suspense>
     }
+    
 ])
 
 export default rootRouter
