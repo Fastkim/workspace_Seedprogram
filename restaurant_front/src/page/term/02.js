@@ -3,8 +3,8 @@ import Layout from '../Layout'
 
 const PrivacyPolicy = () => {
     return (
-        <Container className='border border-dark Container text-center'>
-            <Layout>
+        <Container className=' text-center'>
+            <Layout className='wrapper'>
                 <div>
                     <p className='fs-5 fw-bold mt-3'>개인 정보 처리 방침</p>
                 </div>

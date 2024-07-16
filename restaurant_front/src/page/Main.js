@@ -1,10 +1,9 @@
-import {Container, Form, Button, Row, Col, Stack, ButtonGroup} from 'react-bootstrap'
+import {Form, Button, Row, Col, Stack, ButtonGroup} from 'react-bootstrap'
 import {ChevronDown, ChevronUp} from 'react-bootstrap-icons';
 import Layout from './Layout';
 
 const Main = () => {
     return (
-        <Container className='border border-dark Container'>
             <Layout>
                 <Row>
                     <Col>
@@ -27,7 +26,7 @@ const Main = () => {
                                         aria-label="Search"
                                         />
                                     </Col>
-                                    <Button variant="outline-dark">Search</Button>
+                                    <Button variant="warning">Search</Button>{' '}
                                 </Form>
                             </Col>
                         </Row>
@@ -54,7 +53,7 @@ const Main = () => {
                 </Stack>
                 <Row className='mt-4 text-center'>
                     <div className='d-flex justify-content-center'>
-                        <Button variant="secondary" className='d-flex plusBtn'><span>더보기</span><ChevronDown className='ms-2 mt-1'/></Button>
+                        <Button variant="warning" className='d-flex plusBtn btn'><span>더보기</span><ChevronDown className='ms-2 mt-1'/></Button>
                     </div>
                 </Row>
                 <Row className='mt-4'>
@@ -92,41 +91,39 @@ const Main = () => {
                 </Stack>
                 <Row className='mt-4'>
                     <ButtonGroup size='sm' className='gap-3 '>
-                        <Button variant="Light" className='border border-dark'>일식</Button>
-                        <Button variant="Light" className='border border-dark'>돈가스</Button>
-                        <Button variant="Light" className='border border-dark'>양식</Button>
-                        <Button variant="Light" className='border border-dark'>초밥</Button>
-                        <Button variant="Light" className='border border-dark'>김밥</Button>
-                        <Button variant="Light" className='border border-dark'>분식</Button>
-                        <Button variant="Light" className='border border-dark'>한식</Button>
+                        <Button variant="warning" className='border border-dark'>일식</Button>
+                        <Button variant="warning" className='border border-dark'>돈가스</Button>
+                        <Button variant="warning" className='border border-dark'>양식</Button>
+                        <Button variant="warning" className='border border-dark'>초밥</Button>
+                        <Button variant="warning" className='border border-dark'>김밥</Button>
+                        <Button variant="warning" className='border border-dark'>분식</Button>
+                        <Button variant="warning" className='border border-dark'>한식</Button>
                     </ButtonGroup>
                 </Row>
                 <Row className='mt-4'>
                     <ButtonGroup size='sm' className='gap-3'>
-                        <Button variant="Light" className='border border-dark'>찌개</Button>
-                        <Button variant="Light" className='border border-dark'>피자</Button>
-                        <Button variant="Light" className='border border-dark'>스테이크</Button>
-                        <Button variant="Light" className='border border-dark'>카레</Button>
-                        <Button variant="Light" className='border border-dark'>중식</Button>
-                        <Button variant="Light" className='border border-dark'>샤브샤브</Button>
+                        <Button variant="warning" className='border border-dark'>찌개</Button>
+                        <Button variant="warning" className='border border-dark'>피자</Button>
+                        <Button variant="warning" className='border border-dark'>스테이크</Button>
+                        <Button variant="warning" className='border border-dark'>카레</Button>
+                        <Button variant="warning" className='border border-dark'>중식</Button>
+                        <Button variant="warning" className='border border-dark'>샤브샤브</Button>
                     </ButtonGroup>
                 </Row>
                 <Row className='mt-4'>
                     <ButtonGroup size='sm' className='gap-3'>
-                        <Button variant="Light" className='border border-dark'>햄버거</Button>
-                        <Button variant="Light" className='border border-dark'>회식</Button>
-                        <Button variant="Light" className='border border-dark'>점심</Button>
-                        <Button variant="Light" className='border border-dark'>해물</Button>
+                        <Button variant="warning" className='border border-dark'>햄버거</Button>
+                        <Button variant="warning" className='border border-dark'>회식</Button>
+                        <Button variant="warning" className='border border-dark'>점심</Button>
+                        <Button variant="warning" className='border border-dark'>해물</Button>
                     </ButtonGroup>
                 </Row>
                 <Row className='mt-4 text-center'>
                     <div className='d-flex justify-content-center'>
-                        <Button variant="secondary" className='d-flex clBtn'><span>닫기</span><ChevronUp className='ms-2 mt-1'/></Button>
+                        <Button variant="warning" className='d-flex clBtn'><span>닫기</span><ChevronUp className='ms-2 mt-1'/></Button>
                     </div>
                 </Row>
             </Layout>
-        </Container>
-
     )
 }
 

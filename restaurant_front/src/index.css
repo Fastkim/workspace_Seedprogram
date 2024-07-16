@@ -1,10 +1,42 @@
+.body {
+    height: 100%;
+}
+
 .Container {
     width: 500px;
     border-radius: 0.5rem;
 }
 
-.AdminContainer {
+.wrapper{  /* display */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+.contentWrapper{
+    flex: 1;
+}
 
+
+.btn {
+    background-color: orange;
+    color: black;
+}
+
+#footer {
+    background-color: skyblue;
+    margin-top: 3rem;
+    height: 15rem;
+}
+
+.header {
+    height: 10rem;
+    background-color: skyblue;
+    
+}
+
+button {
+    color: orange;
 }
 
 .restaruntListFilter {
@@ -30,11 +62,7 @@
     background-color: rgb(198, 198, 198);
 }
 
-#footer {
-    background-color: gray;
-    margin-top: 3rem;
-    height: 15rem;
-}
+
 
 #nav {
     margin-left: 6rem;
@@ -76,8 +104,8 @@
 .loginBtn, .loginUpBtn {
     width: 100%;
     border-radius: 3rem;
-    background-color: gray;
-    color: white;
+    background-color: orange;
+    color: black;
     background-color: lightbl;
     background-color: sky;
 }
@@ -118,7 +146,8 @@
 }
 
 .plusBtn, .clBtn {
-    background-color: rgb(187, 185, 185);
+    border-color:  black ;
+    border-width: 0.1rem;
     color:black;
 }
 
@@ -152,11 +181,6 @@
 
 .footerEndText {
     margin-top: 3rem;
-}
-
-.header {
-    height: 10rem;
-    background-color: rgb(198, 198, 198);
 }
 
 .foodListImage {
@@ -211,6 +235,6 @@
     text-align: center;
 }
 
-.questionUpdateBtn {
-    width: 5rem;
+.bannerText {
+    margin-top: 6rem;
 }

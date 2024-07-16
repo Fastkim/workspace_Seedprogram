@@ -3,7 +3,8 @@ import { Suspense } from "react";
 import Main from '../page/Main';
 import Login from '../page/user/01';
 import RestaurantList from '../page/restaurant/01';
-import RestaurantFilter from '../page/restaurant/02';
+import Restaurant from "../page/restaurant/02";
+import RestaurantFilter from '../page/restaurant/03';
 import TermsOfService from '../page/term/01';
 import PrivacyPolicy from "../page/term/02";
 import QuestionUpdate from "../page/question/04";
@@ -22,6 +23,10 @@ const rootRouter = createBrowserRouter([
     {
         path: '/restaurantList',
         element: <Suspense><RestaurantList/></Suspense>
+    },
+    {
+        path: '/restaurant',
+        element: <Suspense><Restaurant/></Suspense>
     },
     {
         path: '/restaurantFilter',

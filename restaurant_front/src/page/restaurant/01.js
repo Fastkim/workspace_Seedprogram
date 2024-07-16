@@ -1,15 +1,20 @@
 import React from 'react';
-import {Container, Row, Col, Form, Button, Nav, Navbar} from 'react-bootstrap';
-import {Justify, Diagram3, ChevronDown, ChatDotsFill, ChevronCompactLeft, ChevronCompactRight, Search, ArrowUpCircle} from 'react-bootstrap-icons';
+import {Row, Col, Form, Button} from 'react-bootstrap';
+import {Diagram3, ChevronDown, ChatDotsFill, ChevronCompactLeft, ChevronCompactRight, Search} from 'react-bootstrap-icons';
 import Table from 'react-bootstrap/Table';
+import Layout from '../Layout';
+import {FaDog, FaParking} from "react-icons/fa";
+import {MdOutlineDoorSliding} from "react-icons/md";
+import {CgHomeScreen} from "react-icons/cg";
+import {FaTruckRampBox} from "react-icons/fa6";
+import {FaElevator} from "react-icons/fa6";
+
+
+
 
 const RestaurantList = () => {
     return (
-        <Container className='border border-dark Container'>
-            <Row className='text-center header'>
-                <Col className='pe-1 '><div className='w-25 h-100 border border-dark float-end d-flex align-items-center justify-content-center bg-white'>로고</div></Col>
-                <Col className='ps-2'><span className='float-start align-middle'>SINCE 2024<br/>B E F R E E</span> <Justify className='float-end mt-2' id='list'/></Col>
-            </Row>
+        <Layout>
             <Row className='mt-3'>
                 <Form inline >
                     <Row>
@@ -79,7 +84,7 @@ const RestaurantList = () => {
                 <Table striped bordered hover className='fs-5'>
                     <thead>
                         <tr className='text-center span3'>
-                            <th >일</th>
+                            <th>일</th>
                             <th>월</th>
                             <th>화</th>
                             <th>수</th>
@@ -89,7 +94,7 @@ const RestaurantList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className='text-center'>
+                        <tr className='text-center bg-light'>
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
@@ -101,9 +106,24 @@ const RestaurantList = () => {
                     </tbody>
                 </Table>
             </Row>
+            <hr/>
+            <Row>
+                <p>편의성(barrier-free)</p>
+            </Row>
+            <Row>
+                <Col>
+                    <Row>
+                        <Col><FaElevator className='me-2 mb-2 fs-5'/>엘레베이터</Col><Col><FaTruckRampBox className='me-2 mb-2 fs-5'/>경사로</Col><Col><CgHomeScreen className='me-2 mb-2 fs-5'/>키오스크</Col>
+                    </Row>
+                    <Row>
+                        <Col><MdOutlineDoorSliding className='me-2 mb-2 fs-5'/>자동문</Col><Col><FaParking className='me-2 mb-2 fs-5'/>주차장</Col><Col className='d-flex px-0'><FaDog className='me-2 mb-2 fs-5'/><div className=''>안내견 동반가능</div></Col>
+                    </Row>
+                </Col>
+            </Row>
             <Row>
                 <div className='separateLine p-2'></div>
             </Row>
+            
             <Row className='mt-3'>
                 <Col>
                     <Row>
@@ -193,32 +213,7 @@ const RestaurantList = () => {
                 <p className='footerNav text-center'>종로점심 | 명동 교자(만두) | 명동칼국수 | 충무로 타코 | 충무로 선술집 | 명동 카페 | </p>
                 <p className='footerNav text-center'>충무로 카페 | 을지로입구 카페 | 종로 카페 | 종로 호프 |</p>
             </Row>
-            <Row>
-                <div id='footer'>
-                    <div id='nav text-center'>
-                        <Navbar>
-                            <Container >
-                                <Navbar.Collapse id="basic-navbar-nav">
-                                    <Nav className="me-auto footerNavigation text-center mt-4">
-                                        <Nav.Link href="#link" className='text-white p-0 navText mt-1'>이용약관 |</Nav.Link>
-                                        <Nav.Link href="#link" className='text-white p-0 ms-1 fs-5 navText'>개인정보처리방침 |</Nav.Link>
-                                        <Nav.Link href="#link" className='text-white p-0 ms-1 mt-1 navText'>사이트맵</Nav.Link>
-                                    </Nav>
-                                </Navbar.Collapse>
-                            </Container>
-                        </Navbar>
-                    </div>
-                    <div className='footerText'>
-                        <p className='mb-0'>상호: 비프리주식회사 | 대표이사: 한성목 | 설립일: 2024년 7월 10일 | 개인정보관리책임자: 김다훈</p>
-                        <p className='mb-0'>문의 : hr@gmail.com | 사업자등록번호: 123-45-67890 | 통신판매업 신고번호: 0000-서울중구-00000호</p>
-                        <p className='mb-0'>서울특별시 중국 퇴계로 173 남산스퀘어 11층</p>
-                    </div>
-                    <Row className='mt-4 text-center footerEnd' >
-                        <p className='footerEndText'>Copyright 2024 BEFREE | All Rights Reserved<span className='float-end ms-2 mt-1'>맨위로</span><ArrowUpCircle className='arrowUpCircle float-end'/></p>
-                    </Row>
-                </div>
-            </Row>
-        </Container>
+        </Layout>
     )
 }
 

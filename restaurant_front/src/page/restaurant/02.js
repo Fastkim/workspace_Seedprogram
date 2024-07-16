@@ -1,168 +1,203 @@
-import {Container, Row, Col, Form, Button} from 'react-bootstrap';
-import {Justify, GeoAlt, Grid3x3Gap} from 'react-bootstrap-icons';
+import React from 'react';
+import {Row, Col, Form, Button} from 'react-bootstrap';
+import {Diagram3, ChevronDown, ChatDotsFill, ChevronCompactLeft, ChevronCompactRight, Search} from 'react-bootstrap-icons';
+import Table from 'react-bootstrap/Table';
+import Layout from '../Layout';
+import {FaDog, FaParking} from "react-icons/fa";
+import {MdOutlineDoorSliding} from "react-icons/md";
+import {CgHomeScreen} from "react-icons/cg";
+import {FaTruckRampBox} from "react-icons/fa6";
+import {FaElevator} from "react-icons/fa6";
 
-const RestaurantFilter = () => {
+const Restaurant = () => {
     return (
-        <Container className='border border-dark Container restaruntListFilter'>
-            <Row className=''>
-                <Col className='justify-content-center'>
-                    <Row className='text-center header'>
-                        <Col className='pe-1 '><div className='w-25 h-100 border border-dark float-end d-flex align-items-center justify-content-center bg-white'>로고</div></Col>
-                        <Col className='ps-2'><span className='float-start align-middle'>SINCE 2024<br/>B E F R E E</span> <Justify className='float-end mt-2' id='list'/></Col>
-                    </Row>
-                    <Row className='mt-3'>
-                        <div className='d-flex align-items-center justify-content-center'>
-                            <GeoAlt className='me-2 fs-4'/>
-                            <Form.Select aria-label="Default select example">
-                                <option>지역</option>
-                                <option value="1">서울</option>
-                                <option value="2">경기</option>
-                                <option value="3">인천</option>
-                            </Form.Select>
-                        </div>
-                    </Row>
-                    <Row className='mt-3'>
-                        <div className='d-flex align-items-center justify-content-center'>
-                            <Grid3x3Gap className='me-2 fs-4'/>
-                            <Form.Select aria-label="Default select example">
-                                <option>전체</option>
-                                <option value="1">서울</option>
-                                <option value="2">경기</option>
-                                <option value="3">인천</option>
-                            </Form.Select>
-                        </div>
-                    </Row>
-                    <Row className='price'>
+        <Layout>
+            <div className='border border-dark text-center flex justify-center'>
+                <div className=''>음식이미지</div>
+            </div>
+
+            {/* <Row className='border border-dark text-center'>
+                
+                    <div className='bannerText'>음식 이미지</div>
+               
+                <div className='border border-dark w-50'><p className='mb-0 mt-4'>음식점소개</p></div>
+            </Row> */}
+            <Row>
+                중계역
+            </Row>
+            <Row className='mt-3'>
+                <Col>
+                    <Row>
+                        <Col className='d-flex '>
+                            <div className='fs-5 fw-bold'>가게이름</div>
+                            <div className='ms-3'><ChatDotsFill/>102</div>
+                        </Col>
                         <Col>
-                            가격대
-                        </Col>
-                    </Row>
-                    <Row className='mt-3'>
-                        <div className='d-flex align-items-center justify-content-center'>
-                            <Form.Select aria-label="Default select example">
-                                <option>선택</option>
-                                <option value="1">1,000 ~ 10,000 (원)</option>
-                                <option value="2">10,000 ~ 30,000 (원)</option>
-                                <option value="3">30,000 ~ 60,000</option>
-                                <option value="4">60,000 ~ 100,000</option>
-                            </Form.Select>
-                        </div>
-                    </Row>
-                    <Row className='mt-4'>
-                        <Col>
-                            영업시간
-                        </Col>
-                    </Row>
-                    <Row className=''>
-                        <Col xs={8}>
-                            <div className='d-flex align-items-center justify-content-center'>
-                                <Form.Select aria-label="Default select example">
-                                    <option>지정하지 않음</option>
-                                    <option value="1">아침</option>
-                                    <option value="2">점심</option>
-                                    <option value="3">밤 10시 이후 입점 가능</option>
-                                    <option value="4">밤 12시 이후 입점 가능</option>
-                                    <option value="4">아침까지 영업</option>
-                                </Form.Select>
-                            </div>
-                        </Col>
-                        <Col xs={4}>
-                            <Form className='d-flex float-end mb-0'>
-                                {['checkbox'].map((type) => (
-                                    <div key={`default-${type}`} className="d-flex align-items-center justify-content-center float-end">
-                                    <Form.Check
-                                        type={type}
-                                        id={`default-${type}`}
-                                        label={'일요일영업'}
-                                    />
-                                    </div>
-                                ))}
-                            </Form>
-                        </Col>
-                    </Row>
-                    <Row className='mt-4'>
-                        <Col>
-                            편의성(barriar-free)
-                        </Col>
-                    </Row>
-                    <Row className='mt-3'>
-                        <Form className='d-flex float-end mb-0'>
-                            {['radio'].map((type) => (
-                                <div key={`default-${type}`} className="d-flex align-items-center justify-content-center float-end">
-                                    <Form.Check
-                                        inline
-                                        label="엘레베이터"
-                                        name="group1"
-                                        type={type}
-                                        id={`inline-${type}-1`}
-                                    />
-                                    <Form.Check
-                                        inline
-                                        label="경사로"
-                                        name="group1"
-                                        type={type}
-                                        id={`inline-${type}-2`}
-                                    />
-                                    <Form.Check
-                                        inline
-                                        label="키오스크"
-                                        name="group1"
-                                        type={type}
-                                        id={`inline-${type}-3`}
-                                    />
-                                    <Form.Check
-                                        inline
-                                        label="자동문"
-                                        name="group1"
-                                        type={type}
-                                        id={`inline-${type}-4`}
-                                    />
-                                </div>
-                            ))}
-                        </Form>
-                    </Row>
-                    <Row className='mt-3'>
-                        <Form className='d-flex float-end mb-0'>
-                                {['radio'].map((type) => (
-                                    <div key={`default-${type}`} className="d-flex align-items-center justify-content-center float-end">
-                                        <Form.Check
-                                            inline
-                                            label="주차장"
-                                            name="group1"
-                                            type={type}
-                                            id={`inline-${type}-1`}
-                                        />
-                                        <Form.Check
-                                            inline
-                                            label="자동문"
-                                            name="group1"
-                                            type={type}
-                                            id={`inline-${type}-2`}
-                                        />
-                                        <Form.Check
-                                            inline
-                                            label="안내견 동반가능"
-                                            name="group1"
-                                            type={type}
-                                            id={`inline-${type}-3`}
-                                        />
-                                    </div>
-                                ))}
-                        </Form>
-                    </Row>
-                    <hr className='hrLine'/>
-                    <Row className='mb-3'>
-                        <Col xs={4}>
-                            <Button variant="secondary" className='clBtn w-100'><span>초기화</span></Button>
-                        </Col>
-                        <Col xs={8}>
-                            <Button variant="secondary" className='clBtn w-100'><span>검색</span></Button>
+                            <Button variant="dark" className='float-end'><span>예약</span></Button>
                         </Col>
                     </Row>
                 </Col>
             </Row>
-        </Container>
+            <Row>
+                <Col>
+                    충무로역 / 비빔밥, 제육볶음, 철판구이, 한식
+                </Col>
+            </Row>
+            <Row className='mt-3'>
+                <Col>
+                    <div className='mx-auto border border-dark text-center p-4'><p className='foodImageText'>음식<br/>이미지</p></div>
+                </Col>
+                <Col className='ps-0 pe-0'>
+                    <div className='mx-auto border border-dark text-center p-4'><p className='foodImageText'>음식<br/>이미지</p></div>
+                </Col>
+                <Col>
+                    <div className='mx-auto border border-dark text-center p-4'><p className='foodImageText'>음식<br/>이미지</p></div>
+                </Col>
+            </Row>
+            <Row className='mt-3'>
+                <Col>
+                    가게설명<br/>
+                    ★★★☆☆ 3.26 <br/>
+                    <Button variant="" size='sm' className='foodBtn border border-dark fw-bold mt-2'>엘레베이터</Button>
+                    <Button variant="" size='sm' className='foodBtn border border-dark fw-bold mt-2 ms-2'>키오스크</Button>
+                    <Button variant="" size='sm' className='foodBtn border border-dark fw-bold mt-2 ms-2'>자동문</Button>
+                </Col>
+            </Row>
+            <Row className='mt-3 mx-1'>
+                <Table striped bordered hover className='fs-5'>
+                    <thead>
+                        <tr className='text-center span3'>
+                            <th>일</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th>금</th>
+                            <th>토</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className='text-center bg-light'>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                    </tbody>
+                </Table>
+            </Row>
+            <hr/>
+            <Row>
+                <p>편의성(barrier-free)</p>
+            </Row>
+            <Row>
+                <Col>
+                    <Row>
+                        <Col><FaElevator className='me-2 mb-2 fs-5'/>엘레베이터</Col><Col><FaTruckRampBox className='me-2 mb-2 fs-5'/>경사로</Col><Col><CgHomeScreen className='me-2 mb-2 fs-5'/>키오스크</Col>
+                    </Row>
+                    <Row>
+                        <Col><MdOutlineDoorSliding className='me-2 mb-2 fs-5'/>자동문</Col><Col><FaParking className='me-2 mb-2 fs-5'/>주차장</Col><Col className='d-flex px-0'><FaDog className='me-2 mb-2 fs-5'/><div className=''>안내견 동반가능</div></Col>
+                    </Row>
+                </Col>
+            </Row>
+            <Row>
+                <div className='separateLine p-2'></div>
+            </Row>
+            
+            <Row className='mt-3'>
+                <Col>
+                    <Row>
+                        <Col className='d-flex align-items-center'>
+                            <div className='fs-5 fw-bold'>가게이름</div>
+                            <div className='ms-3'><ChatDotsFill/>49</div>
+                        </Col>
+                        <Col>
+                            <Button variant="dark" className='float-end'><span>예약</span></Button>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    명동역 / 스테이크, 쇠고기 요리
+                </Col>
+            </Row>
+            <Row className='mt-3'>
+                <Col>
+                    <div className='mx-auto border border-dark text-center p-4'><p className='foodImageText'>음식<br/>이미지</p></div>
+                </Col>
+                <Col className='ps-0 pe-0'>
+                    <div className='mx-auto border border-dark text-center p-4'><p className='foodImageText'>음식<br/>이미지</p></div>
+                </Col>
+                <Col>
+                    <div className='mx-auto border border-dark text-center p-4'><p className='foodImageText'>음식<br/>이미지</p></div>
+                </Col>
+            </Row>
+            <Row className='mt-3'>
+                <Col>
+                    가게설명<br/>
+                    ★★★☆☆ 3.26 <br/>
+                    <Button variant="" size='sm' className='foodBtn border border-dark fw-bold mt-2'>엘레베이터</Button>
+                    <Button variant="" size='sm' className='foodBtn border border-dark fw-bold mt-2 ms-2'>키오스크</Button>
+                    <Button variant="" size='sm' className='foodBtn border border-dark fw-bold mt-2 ms-2'>자동문</Button>
+                </Col>
+            </Row>
+            <Row className='mt-3 mx-1'>
+                <Table striped bordered hover className='fs-5'>
+                    <thead>
+                        <tr className='text-center span3'>
+                            <th >일</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th>금</th>
+                            <th>토</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className='text-center'>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                    </tbody>
+                </Table>
+            </Row>
+            <Row>
+                <div className='separateLine p-2'></div>
+            </Row>
+            <Row className='mt-4 text-center fs-4'>
+                <div><ChevronCompactLeft className='mb-1'/> 이전 &nbsp; 1  &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; 다음 <ChevronCompactRight className='mb-1'/></div>
+            </Row>
+            <Row>
+                <div className='footerSearch'>
+                    <p className='mt-3'>다른 종류의 요리 찾기</p>
+                    <p className='m-0'><Search className='me-2'/>충무로 한식</p><hr className='m-2'/>
+                    <p className='m-0'><Search className='me-2'/>충무로 한식</p><hr className='m-2'/>
+                    <p className='m-0'><Search className='me-2'/>충무로 한식</p><hr className='m-2'/>
+                    <p className='m-0'><Search className='me-2'/>충무로 한식</p><hr className='m-2'/>
+                </div>
+            </Row>
+            <Row className='mt-3'>
+                <Col className='fw-bold'>
+                    인기 지역 및 종류
+                </Col> 
+            </Row>
+            <Row>
+                <p className='footerNav text-center mt-4'>명동 | 을지로입구 | 을지로 3가 | 을지로4가 종로3가 | 종로5가 | 명동점심 | 을지로점심 |</p>
+                <p className='footerNav text-center'>종로점심 | 명동 교자(만두) | 명동칼국수 | 충무로 타코 | 충무로 선술집 | 명동 카페 | </p>
+                <p className='footerNav text-center'>충무로 카페 | 을지로입구 카페 | 종로 카페 | 종로 호프 |</p>
+            </Row>
+        </Layout>
     )
 }
 
-export default RestaurantFilter
+export default Restaurant
